@@ -116,6 +116,7 @@ fig_1E = ggplot(abs_data,aes(x=Feature,y=Proportion,Group=variable)) +
         legend.title=element_blank(),
         legend.key.height = unit(0.1, "cm"))
 
+## Panel 1A is overview diagram, added in Illustrator
 first_col <- plot_grid(NULL, fig_1C, fig_1E, labels = c('A','C', 'E'), nrow=3, align='hv')
 second_col <- plot_grid(fig_1B, fig_1D, labels=c('B', 'D'), nrow=2, align='hv', rel_heights=c(1,2))
 fig_1 = plot_grid(first_col, second_col, ncol = 2, align='v')
