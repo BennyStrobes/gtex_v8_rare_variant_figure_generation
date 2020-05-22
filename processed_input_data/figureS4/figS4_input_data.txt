@@ -1,0 +1,50 @@
+tissue	number_of_junctions	number_of_clusters	number_of_genes
+Adipose Subcutaneous	68845	19624	9055
+Adipose Visceral Omentum	55432	15969	8174
+Adrenal Gland	34615	10646	6411
+Artery Aorta	45519	13499	7325
+Artery Coronary	46377	13761	7501
+Artery Tibial	65801	18407	8589
+Brain Amygdala	31359	9495	5967
+Brain Anterior cingulate cortex BA24	35429	10727	6566
+Brain Caudate basal ganglia	31185	9794	6217
+Brain Cerebellar Hemisphere	45276	13614	6949
+Brain Cerebellum	42158	12990	6666
+Brain Cortex	33953	10728	6417
+Brain Frontal Cortex BA9	36412	11119	6720
+Brain Hippocampus	33136	10138	6237
+Brain Hypothalamus	41121	12361	7224
+Brain Nucleus accumbens basal ganglia	36128	10841	6621
+Brain Putamen basal ganglia	30393	9344	5938
+Brain Spinal cord cervical c-1	29157	9099	5826
+Brain Substantia nigra	26828	8387	5555
+Breast Mammary Tissue	55543	16398	8414
+Cells Cultured fibroblasts	44329	13345	7559
+Cells EBV-transformed lymphocytes	40673	12297	6955
+Colon Sigmoid	41423	12538	7039
+Colon Transverse	53849	15624	8008
+Esophagus Gastroesophageal Junction	41934	12770	7144
+Esophagus Mucosa	41399	12058	6927
+Esophagus Muscularis	45667	13649	7408
+Heart Atrial Appendage	38144	11308	6533
+Heart Left Ventricle	31536	9186	5598
+Kidney Cortex	28566	9119	5828
+Liver	27356	8124	5058
+Lung	71778	20116	9110
+Minor Salivary Gland	37265	11568	6946
+Muscle Skeletal	53474	14483	7117
+Nerve Tibial	58226	17358	8477
+Ovary	38606	11988	6751
+Pancreas	26542	8172	5215
+Pituitary	44810	13819	7492
+Prostate	42513	13012	7242
+Skin Not Sun Exposed Suprapubic	52132	15495	8041
+Skin Sun Exposed Lower leg	63696	18324	8813
+Small Intestine Terminal Ileum	41588	12857	7255
+Spleen	37669	11472	6541
+Stomach	37557	11183	6547
+Testis	75130	21360	10444
+Thyroid	57549	17060	8456
+Uterus	36125	11416	6600
+Vagina	36340	11299	6749
+Whole Blood	53979	12884	6000
