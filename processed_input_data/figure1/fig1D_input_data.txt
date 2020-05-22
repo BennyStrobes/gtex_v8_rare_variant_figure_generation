@@ -1,0 +1,412 @@
+Variant_category	pval_bin	Proportion	Type
+BND	0~1e-07	0.011986301369863	aseOutliers
+CNV	0~1e-07	0.00856164383561644	aseOutliers
+coding	0~1e-07	0.0530821917808219	aseOutliers
+conserved_noncoding	0~1e-07	0.155821917808219	aseOutliers
+DEL	0~1e-07	0.023972602739726	aseOutliers
+DUP	0~1e-07	0.0136986301369863	aseOutliers
+frameshift	0~1e-07	0.0291095890410959	aseOutliers
+no_variant	0~1e-07	0.0787671232876712	aseOutliers
+other_noncoding	0~1e-07	0.35958904109589	aseOutliers
+splice_acceptor_variant	0~1e-07	0.0136986301369863	aseOutliers
+splice_donor_variant	0~1e-07	0.0393835616438356	aseOutliers
+splice_region_variant	0~1e-07	0.10958904109589	aseOutliers
+stop	0~1e-07	0.0479452054794521	aseOutliers
+TE	0~1e-07	0.011986301369863	aseOutliers
+TSS	0~1e-07	0.0428082191780822	aseOutliers
+BND	1e-02~5e-02	0.00173029090515843	aseOutliers
+CNV	1e-02~5e-02	0.0101654590678058	aseOutliers
+coding	1e-02~5e-02	0.0257380772142316	aseOutliers
+conserved_noncoding	1e-02~5e-02	0.0780793770952741	aseOutliers
+DEL	1e-02~5e-02	0.0107061749756678	aseOutliers
+DUP	1e-02~5e-02	0.00410944089975127	aseOutliers
+frameshift	1e-02~5e-02	0.00551530226019249	aseOutliers
+INV	1e-02~5e-02	0.000108143181572402	aseOutliers
+no_variant	1e-02~5e-02	0.313939656104683	aseOutliers
+other_noncoding	1e-02~5e-02	0.467719260300638	aseOutliers
+splice_acceptor_variant	1e-02~5e-02	0.00162214772358603	aseOutliers
+splice_donor_variant	1e-02~5e-02	0.00162214772358603	aseOutliers
+splice_region_variant	1e-02~5e-02	0.0187087704120255	aseOutliers
+stop	1e-02~5e-02	0.00854331134421975	aseOutliers
+TE	1e-02~5e-02	0.00919217043365416	aseOutliers
+TSS	1e-02~5e-02	0.0425002703579539	aseOutliers
+BND	1e-03~1e-02	0.00241896468311563	aseOutliers
+CNV	1e-03~1e-02	0.0198355104015481	aseOutliers
+coding	1e-03~1e-02	0.0319303338171263	aseOutliers
+conserved_noncoding	1e-03~1e-02	0.0769230769230769	aseOutliers
+DEL	1e-03~1e-02	0.0188679245283019	aseOutliers
+DUP	1e-03~1e-02	0.0149975810353169	aseOutliers
+frameshift	1e-03~1e-02	0.0164489598451863	aseOutliers
+no_variant	1e-03~1e-02	0.261731978713111	aseOutliers
+other_noncoding	1e-03~1e-02	0.415578132559265	aseOutliers
+splice_acceptor_variant	1e-03~1e-02	0.00628930817610063	aseOutliers
+splice_donor_variant	1e-03~1e-02	0.00532172230285438	aseOutliers
+splice_region_variant	1e-03~1e-02	0.0420899854862119	aseOutliers
+stop	1e-03~1e-02	0.0241896468311563	aseOutliers
+TE	1e-03~1e-02	0.00822447992259313	aseOutliers
+TSS	1e-03~1e-02	0.0551523947750363	aseOutliers
+BND	1e-04~1e-03	0.00417536534446764	aseOutliers
+CNV	1e-04~1e-03	0.0104384133611691	aseOutliers
+coding	1e-04~1e-03	0.0417536534446764	aseOutliers
+conserved_noncoding	1e-04~1e-03	0.100208768267223	aseOutliers
+DEL	1e-04~1e-03	0.0167014613778706	aseOutliers
+DUP	1e-04~1e-03	0.0167014613778706	aseOutliers
+frameshift	1e-04~1e-03	0.0334029227557411	aseOutliers
+INV	1e-04~1e-03	0.00208768267223382	aseOutliers
+no_variant	1e-04~1e-03	0.135699373695198	aseOutliers
+other_noncoding	1e-04~1e-03	0.407098121085595	aseOutliers
+splice_acceptor_variant	1e-04~1e-03	0.00835073068893528	aseOutliers
+splice_donor_variant	1e-04~1e-03	0.00417536534446764	aseOutliers
+splice_region_variant	1e-04~1e-03	0.0876826722338205	aseOutliers
+stop	1e-04~1e-03	0.0459290187891441	aseOutliers
+TE	1e-04~1e-03	0.0146137787056367	aseOutliers
+TSS	1e-04~1e-03	0.0709812108559499	aseOutliers
+CNV	1e-05~1e-04	0.0523809523809524	aseOutliers
+coding	1e-05~1e-04	0.0428571428571429	aseOutliers
+conserved_noncoding	1e-05~1e-04	0.123809523809524	aseOutliers
+DEL	1e-05~1e-04	0.0238095238095238	aseOutliers
+DUP	1e-05~1e-04	0.0238095238095238	aseOutliers
+frameshift	1e-05~1e-04	0.0380952380952381	aseOutliers
+no_variant	1e-05~1e-04	0.080952380952381	aseOutliers
+other_noncoding	1e-05~1e-04	0.319047619047619	aseOutliers
+splice_acceptor_variant	1e-05~1e-04	0.0142857142857143	aseOutliers
+splice_donor_variant	1e-05~1e-04	0.0285714285714286	aseOutliers
+splice_region_variant	1e-05~1e-04	0.080952380952381	aseOutliers
+stop	1e-05~1e-04	0.0904761904761905	aseOutliers
+TE	1e-05~1e-04	0.019047619047619	aseOutliers
+TSS	1e-05~1e-04	0.0619047619047619	aseOutliers
+BND	1e-07~1e-05	0.0126050420168067	aseOutliers
+CNV	1e-07~1e-05	0.0210084033613445	aseOutliers
+coding	1e-07~1e-05	0.0294117647058824	aseOutliers
+conserved_noncoding	1e-07~1e-05	0.117647058823529	aseOutliers
+DEL	1e-07~1e-05	0.0294117647058824	aseOutliers
+DUP	1e-07~1e-05	0.0210084033613445	aseOutliers
+frameshift	1e-07~1e-05	0.0210084033613445	aseOutliers
+no_variant	1e-07~1e-05	0.092436974789916	aseOutliers
+other_noncoding	1e-07~1e-05	0.336134453781513	aseOutliers
+splice_acceptor_variant	1e-07~1e-05	0.0168067226890756	aseOutliers
+splice_donor_variant	1e-07~1e-05	0.0504201680672269	aseOutliers
+splice_region_variant	1e-07~1e-05	0.100840336134454	aseOutliers
+stop	1e-07~1e-05	0.0630252100840336	aseOutliers
+TE	1e-07~1e-05	0.0126050420168067	aseOutliers
+TSS	1e-07~1e-05	0.0756302521008403	aseOutliers
+BND	nonOutlier	0.00180328078990932	aseOutliers
+CNV	nonOutlier	0.00293908674059858	aseOutliers
+coding	nonOutlier	0.025220294165043	aseOutliers
+conserved_noncoding	nonOutlier	0.090400265158729	aseOutliers
+DEL	nonOutlier	0.00739624382883345	aseOutliers
+DUP	nonOutlier	0.00147778380041312	aseOutliers
+frameshift	nonOutlier	0.00038043319025505	aseOutliers
+INV	nonOutlier	6.5465639237632e-05	aseOutliers
+no_variant	nonOutlier	0.306827837271649	aseOutliers
+other_noncoding	nonOutlier	0.519585213372204	aseOutliers
+splice_acceptor_variant	nonOutlier	0.00023210544820615	aseOutliers
+splice_donor_variant	nonOutlier	0.000292535269040887	aseOutliers
+splice_region_variant	nonOutlier	0.00609242466415669	aseOutliers
+stop	nonOutlier	0.000501292831924525	aseOutliers
+TE	nonOutlier	0.00927735090315114	aseOutliers
+TSS	nonOutlier	0.0275083869266492	aseOutliers
+BND	0~1e-07	0.00422832980972516	sOutliers
+CNV	0~1e-07	0.00634249471458774	sOutliers
+coding	0~1e-07	0.0486257928118393	sOutliers
+conserved_noncoding	0~1e-07	0.0761099365750529	sOutliers
+DEL	0~1e-07	0.0486257928118393	sOutliers
+DUP	0~1e-07	0.00422832980972516	sOutliers
+no_variant	0~1e-07	0.0761099365750529	sOutliers
+other_noncoding	0~1e-07	0.247357293868922	sOutliers
+splice_acceptor_variant	0~1e-07	0.0972515856236787	sOutliers
+splice_donor_variant	0~1e-07	0.120507399577167	sOutliers
+splice_region_variant	0~1e-07	0.234672304439746	sOutliers
+stop	0~1e-07	0.00422832980972516	sOutliers
+TE	0~1e-07	0.00422832980972516	sOutliers
+TSS	0~1e-07	0.0274841437632135	sOutliers
+BND	1e-02~5e-02	0.00106473594548552	sOutliers
+CNV	1e-02~5e-02	0.00628194207836457	sOutliers
+coding	1e-02~5e-02	0.0241695059625213	sOutliers
+conserved_noncoding	1e-02~5e-02	0.035881601362862	sOutliers
+DEL	1e-02~5e-02	0.00628194207836457	sOutliers
+DUP	1e-02~5e-02	0.00149063032367973	sOutliers
+frameshift	1e-02~5e-02	0.00159710391822828	sOutliers
+no_variant	1e-02~5e-02	0.369356899488927	sOutliers
+other_noncoding	1e-02~5e-02	0.501810051107325	sOutliers
+splice_acceptor_variant	1e-02~5e-02	0.00191652470187394	sOutliers
+splice_donor_variant	1e-02~5e-02	0.00276831345826235	sOutliers
+splice_region_variant	1e-02~5e-02	0.0136286201022147	sOutliers
+stop	1e-02~5e-02	0.00138415672913118	sOutliers
+TE	1e-02~5e-02	0.00830494037478705	sOutliers
+TSS	1e-02~5e-02	0.0240630323679727	sOutliers
+BND	1e-03~1e-02	0.00155581485803189	sOutliers
+CNV	1e-03~1e-02	0.00700116686114352	sOutliers
+coding	1e-03~1e-02	0.0322831583041618	sOutliers
+conserved_noncoding	1e-03~1e-02	0.0486192143134967	sOutliers
+DEL	1e-03~1e-02	0.0128354725787631	sOutliers
+DUP	1e-03~1e-02	0.00194476857253987	sOutliers
+frameshift	1e-03~1e-02	0.00388953714507974	sOutliers
+no_variant	1e-03~1e-02	0.367561260210035	sOutliers
+other_noncoding	1e-03~1e-02	0.446129910540646	sOutliers
+splice_acceptor_variant	1e-03~1e-02	0.00544535200311163	sOutliers
+splice_donor_variant	1e-03~1e-02	0.00933488914819136	sOutliers
+splice_region_variant	1e-03~1e-02	0.02878257487359	sOutliers
+stop	1e-03~1e-02	0.00350058343057176	sOutliers
+TE	1e-03~1e-02	0.00894593543368339	sOutliers
+TSS	1e-03~1e-02	0.0221703617269545	sOutliers
+BND	1e-04~1e-03	0.0033112582781457	sOutliers
+CNV	1e-04~1e-03	0.0033112582781457	sOutliers
+coding	1e-04~1e-03	0.0513245033112583	sOutliers
+conserved_noncoding	1e-04~1e-03	0.0645695364238411	sOutliers
+DEL	1e-04~1e-03	0.0115894039735099	sOutliers
+DUP	1e-04~1e-03	0.0033112582781457	sOutliers
+frameshift	1e-04~1e-03	0.00827814569536424	sOutliers
+no_variant	1e-04~1e-03	0.248344370860927	sOutliers
+other_noncoding	1e-04~1e-03	0.420529801324503	sOutliers
+splice_acceptor_variant	1e-04~1e-03	0.0182119205298013	sOutliers
+splice_donor_variant	1e-04~1e-03	0.0231788079470199	sOutliers
+splice_region_variant	1e-04~1e-03	0.0860927152317881	sOutliers
+stop	1e-04~1e-03	0.0033112582781457	sOutliers
+TE	1e-04~1e-03	0.00993377483443709	sOutliers
+TSS	1e-04~1e-03	0.0447019867549669	sOutliers
+CNV	1e-05~1e-04	0.00320512820512821	sOutliers
+coding	1e-05~1e-04	0.0897435897435897	sOutliers
+conserved_noncoding	1e-05~1e-04	0.0769230769230769	sOutliers
+DEL	1e-05~1e-04	0.016025641025641	sOutliers
+DUP	1e-05~1e-04	0.00641025641025641	sOutliers
+no_variant	1e-05~1e-04	0.256410256410256	sOutliers
+other_noncoding	1e-05~1e-04	0.310897435897436	sOutliers
+splice_acceptor_variant	1e-05~1e-04	0.0384615384615385	sOutliers
+splice_donor_variant	1e-05~1e-04	0.0544871794871795	sOutliers
+splice_region_variant	1e-05~1e-04	0.115384615384615	sOutliers
+TE	1e-05~1e-04	0.00320512820512821	sOutliers
+TSS	1e-05~1e-04	0.0288461538461538	sOutliers
+CNV	1e-07~1e-05	0.00537634408602151	sOutliers
+coding	1e-07~1e-05	0.0860215053763441	sOutliers
+conserved_noncoding	1e-07~1e-05	0.032258064516129	sOutliers
+DEL	1e-07~1e-05	0.010752688172043	sOutliers
+DUP	1e-07~1e-05	0.010752688172043	sOutliers
+frameshift	1e-07~1e-05	0.010752688172043	sOutliers
+no_variant	1e-07~1e-05	0.241935483870968	sOutliers
+other_noncoding	1e-07~1e-05	0.327956989247312	sOutliers
+splice_acceptor_variant	1e-07~1e-05	0.0376344086021505	sOutliers
+splice_donor_variant	1e-07~1e-05	0.0752688172043011	sOutliers
+splice_region_variant	1e-07~1e-05	0.10752688172043	sOutliers
+stop	1e-07~1e-05	0.00537634408602151	sOutliers
+TE	1e-07~1e-05	0.021505376344086	sOutliers
+TSS	1e-07~1e-05	0.0268817204301075	sOutliers
+BND	nonOutlier	0.0017556942937762	sOutliers
+CNV	nonOutlier	0.00289025437522882	sOutliers
+coding	nonOutlier	0.015415816994348	sOutliers
+conserved_noncoding	nonOutlier	0.0340459793876177	sOutliers
+DEL	nonOutlier	0.00671945502476326	sOutliers
+DUP	nonOutlier	0.00139779347625538	sOutliers
+frameshift	nonOutlier	0.000485895037012064	sOutliers
+INV	nonOutlier	7.19665611479101e-05	sOutliers
+no_variant	nonOutlier	0.368538344653174	sOutliers
+other_noncoding	nonOutlier	0.531935765255704	sOutliers
+splice_acceptor_variant	nonOutlier	0.000184021877834589	sOutliers
+splice_donor_variant	nonOutlier	0.000257437430146551	sOutliers
+splice_region_variant	nonOutlier	0.00451070949369351	sOutliers
+stop	nonOutlier	0.000435663343324932	sOutliers
+TE	nonOutlier	0.00852055104167975	sOutliers
+TSS	nonOutlier	0.0228346517542936	sOutliers
+BND	0~1e-07	0.00520833333333333	eOutliers - Over
+CNV	0~1e-07	0.0625	eOutliers - Over
+coding	0~1e-07	0.0104166666666667	eOutliers - Over
+conserved_noncoding	0~1e-07	0.0729166666666667	eOutliers - Over
+DEL	0~1e-07	0.0260416666666667	eOutliers - Over
+DUP	0~1e-07	0.145833333333333	eOutliers - Over
+frameshift	0~1e-07	0.00520833333333333	eOutliers - Over
+no_variant	0~1e-07	0.177083333333333	eOutliers - Over
+other_noncoding	0~1e-07	0.3125	eOutliers - Over
+splice_acceptor_variant	0~1e-07	0.0104166666666667	eOutliers - Over
+splice_donor_variant	0~1e-07	0.0260416666666667	eOutliers - Over
+splice_region_variant	0~1e-07	0.03125	eOutliers - Over
+stop	0~1e-07	0.00520833333333333	eOutliers - Over
+TE	0~1e-07	0.00520833333333333	eOutliers - Over
+TSS	0~1e-07	0.104166666666667	eOutliers - Over
+BND	1e-02~5e-02	0.00178970917225951	eOutliers - Over
+CNV	1e-02~5e-02	0.0241610738255034	eOutliers - Over
+coding	1e-02~5e-02	0.0138702460850112	eOutliers - Over
+conserved_noncoding	1e-02~5e-02	0.0322147651006711	eOutliers - Over
+DEL	1e-02~5e-02	0.00805369127516779	eOutliers - Over
+DUP	1e-02~5e-02	0.00402684563758389	eOutliers - Over
+frameshift	1e-02~5e-02	0.00492170022371365	eOutliers - Over
+no_variant	1e-02~5e-02	0.444742729306488	eOutliers - Over
+other_noncoding	1e-02~5e-02	0.400447427293065	eOutliers - Over
+splice_acceptor_variant	1e-02~5e-02	0.000447427293064877	eOutliers - Over
+splice_donor_variant	1e-02~5e-02	0.000894854586129754	eOutliers - Over
+splice_region_variant	1e-02~5e-02	0.00894854586129754	eOutliers - Over
+stop	1e-02~5e-02	0.00268456375838926	eOutliers - Over
+TE	1e-02~5e-02	0.00492170022371365	eOutliers - Over
+TSS	1e-02~5e-02	0.0478747203579418	eOutliers - Over
+BND	1e-03~1e-02	0.00578703703703704	eOutliers - Over
+CNV	1e-03~1e-02	0.0451388888888889	eOutliers - Over
+coding	1e-03~1e-02	0.0173611111111111	eOutliers - Over
+conserved_noncoding	1e-03~1e-02	0.03125	eOutliers - Over
+DEL	1e-03~1e-02	0.00694444444444444	eOutliers - Over
+DUP	1e-03~1e-02	0.0115740740740741	eOutliers - Over
+frameshift	1e-03~1e-02	0.00578703703703704	eOutliers - Over
+no_variant	1e-03~1e-02	0.385416666666667	eOutliers - Over
+other_noncoding	1e-03~1e-02	0.391203703703704	eOutliers - Over
+splice_donor_variant	1e-03~1e-02	0.00462962962962963	eOutliers - Over
+splice_region_variant	1e-03~1e-02	0.0231481481481481	eOutliers - Over
+stop	1e-03~1e-02	0.00347222222222222	eOutliers - Over
+TE	1e-03~1e-02	0.00347222222222222	eOutliers - Over
+TSS	1e-03~1e-02	0.0648148148148148	eOutliers - Over
+BND	1e-04~1e-03	0.00657894736842105	eOutliers - Over
+CNV	1e-04~1e-03	0.0767543859649123	eOutliers - Over
+coding	1e-04~1e-03	0.0219298245614035	eOutliers - Over
+conserved_noncoding	1e-04~1e-03	0.0548245614035088	eOutliers - Over
+DEL	1e-04~1e-03	0.0197368421052632	eOutliers - Over
+DUP	1e-04~1e-03	0.0394736842105263	eOutliers - Over
+frameshift	1e-04~1e-03	0.00657894736842105	eOutliers - Over
+no_variant	1e-04~1e-03	0.285087719298246	eOutliers - Over
+other_noncoding	1e-04~1e-03	0.353070175438596	eOutliers - Over
+splice_donor_variant	1e-04~1e-03	0.00219298245614035	eOutliers - Over
+splice_region_variant	1e-04~1e-03	0.0394736842105263	eOutliers - Over
+stop	1e-04~1e-03	0.00219298245614035	eOutliers - Over
+TE	1e-04~1e-03	0.0131578947368421	eOutliers - Over
+TSS	1e-04~1e-03	0.0789473684210526	eOutliers - Over
+CNV	1e-05~1e-04	0.120535714285714	eOutliers - Over
+coding	1e-05~1e-04	0.0223214285714286	eOutliers - Over
+conserved_noncoding	1e-05~1e-04	0.0401785714285714	eOutliers - Over
+DEL	1e-05~1e-04	0.0223214285714286	eOutliers - Over
+DUP	1e-05~1e-04	0.0625	eOutliers - Over
+frameshift	1e-05~1e-04	0.00892857142857143	eOutliers - Over
+no_variant	1e-05~1e-04	0.232142857142857	eOutliers - Over
+other_noncoding	1e-05~1e-04	0.34375	eOutliers - Over
+splice_donor_variant	1e-05~1e-04	0.00892857142857143	eOutliers - Over
+splice_region_variant	1e-05~1e-04	0.0357142857142857	eOutliers - Over
+TE	1e-05~1e-04	0.00446428571428571	eOutliers - Over
+TSS	1e-05~1e-04	0.0982142857142857	eOutliers - Over
+BND	1e-07~1e-05	0.0050251256281407	eOutliers - Over
+CNV	1e-07~1e-05	0.155778894472362	eOutliers - Over
+coding	1e-07~1e-05	0.0150753768844221	eOutliers - Over
+conserved_noncoding	1e-07~1e-05	0.0552763819095477	eOutliers - Over
+DEL	1e-07~1e-05	0.0150753768844221	eOutliers - Over
+DUP	1e-07~1e-05	0.110552763819095	eOutliers - Over
+frameshift	1e-07~1e-05	0.0100502512562814	eOutliers - Over
+no_variant	1e-07~1e-05	0.120603015075377	eOutliers - Over
+other_noncoding	1e-07~1e-05	0.321608040201005	eOutliers - Over
+splice_acceptor_variant	1e-07~1e-05	0.0150753768844221	eOutliers - Over
+splice_donor_variant	1e-07~1e-05	0.0452261306532663	eOutliers - Over
+splice_region_variant	1e-07~1e-05	0.0452261306532663	eOutliers - Over
+stop	1e-07~1e-05	0.0050251256281407	eOutliers - Over
+TE	1e-07~1e-05	0.0050251256281407	eOutliers - Over
+TSS	1e-07~1e-05	0.0753768844221105	eOutliers - Over
+BND	nonOutlier	0.00175491501855435	eOutliers - Over
+CNV	nonOutlier	0.00401033682641001	eOutliers - Over
+coding	nonOutlier	0.0142623493244205	eOutliers - Over
+conserved_noncoding	nonOutlier	0.0271551110329287	eOutliers - Over
+DEL	nonOutlier	0.00649925866358405	eOutliers - Over
+DUP	nonOutlier	0.00127325576525185	eOutliers - Over
+frameshift	nonOutlier	0.000436634583972055	eOutliers - Over
+INV	nonOutlier	7.95784853282403e-05	eOutliers - Over
+no_variant	nonOutlier	0.409821869843105	eOutliers - Over
+other_noncoding	nonOutlier	0.499736134496017	eOutliers - Over
+splice_acceptor_variant	nonOutlier	0.000205228725320199	eOutliers - Over
+splice_donor_variant	nonOutlier	0.000215699578652862	eOutliers - Over
+splice_region_variant	nonOutlier	0.00368574037309745	eOutliers - Over
+stop	nonOutlier	0.00048375342396904	eOutliers - Over
+TE	nonOutlier	0.00808559294348252	eOutliers - Over
+TSS	nonOutlier	0.0222945409159065	eOutliers - Over
+BND	0~1e-07	0.015748031496063	eOutliers - Under
+CNV	0~1e-07	0.165354330708661	eOutliers - Under
+coding	0~1e-07	0.0078740157480315	eOutliers - Under
+conserved_noncoding	0~1e-07	0.0078740157480315	eOutliers - Under
+DEL	0~1e-07	0.181102362204724	eOutliers - Under
+frameshift	0~1e-07	0.173228346456693	eOutliers - Under
+no_variant	0~1e-07	0.062992125984252	eOutliers - Under
+other_noncoding	0~1e-07	0.110236220472441	eOutliers - Under
+splice_acceptor_variant	0~1e-07	0.0078740157480315	eOutliers - Under
+splice_donor_variant	0~1e-07	0.0393700787401575	eOutliers - Under
+splice_region_variant	0~1e-07	0.0866141732283465	eOutliers - Under
+stop	0~1e-07	0.078740157480315	eOutliers - Under
+TE	0~1e-07	0.0078740157480315	eOutliers - Under
+TSS	0~1e-07	0.0551181102362205	eOutliers - Under
+BND	1e-02~5e-02	0.00323974082073434	eOutliers - Under
+CNV	1e-02~5e-02	0.0134989200863931	eOutliers - Under
+coding	1e-02~5e-02	0.0302375809935205	eOutliers - Under
+conserved_noncoding	1e-02~5e-02	0.0296976241900648	eOutliers - Under
+DEL	1e-02~5e-02	0.0172786177105832	eOutliers - Under
+DUP	1e-02~5e-02	0.00431965442764579	eOutliers - Under
+frameshift	1e-02~5e-02	0.0172786177105832	eOutliers - Under
+no_variant	1e-02~5e-02	0.365010799136069	eOutliers - Under
+other_noncoding	1e-02~5e-02	0.400107991360691	eOutliers - Under
+splice_acceptor_variant	1e-02~5e-02	0.00593952483801296	eOutliers - Under
+splice_donor_variant	1e-02~5e-02	0.00647948164146868	eOutliers - Under
+splice_region_variant	1e-02~5e-02	0.0242980561555076	eOutliers - Under
+stop	1e-02~5e-02	0.0178185745140389	eOutliers - Under
+TE	1e-02~5e-02	0.0102591792656587	eOutliers - Under
+TSS	1e-02~5e-02	0.0545356371490281	eOutliers - Under
+BND	1e-03~1e-02	0.00467289719626168	eOutliers - Under
+CNV	1e-03~1e-02	0.0373831775700935	eOutliers - Under
+coding	1e-03~1e-02	0.0171339563862928	eOutliers - Under
+conserved_noncoding	1e-03~1e-02	0.0373831775700935	eOutliers - Under
+DEL	1e-03~1e-02	0.0389408099688473	eOutliers - Under
+frameshift	1e-03~1e-02	0.0700934579439252	eOutliers - Under
+no_variant	1e-03~1e-02	0.32398753894081	eOutliers - Under
+other_noncoding	1e-03~1e-02	0.272585669781931	eOutliers - Under
+splice_acceptor_variant	1e-03~1e-02	0.0109034267912773	eOutliers - Under
+splice_donor_variant	1e-03~1e-02	0.0264797507788162	eOutliers - Under
+splice_region_variant	1e-03~1e-02	0.0467289719626168	eOutliers - Under
+stop	1e-03~1e-02	0.0327102803738318	eOutliers - Under
+TE	1e-03~1e-02	0.0109034267912773	eOutliers - Under
+TSS	1e-03~1e-02	0.0700934579439252	eOutliers - Under
+BND	1e-04~1e-03	0.00255754475703325	eOutliers - Under
+CNV	1e-04~1e-03	0.0664961636828645	eOutliers - Under
+coding	1e-04~1e-03	0.0179028132992327	eOutliers - Under
+conserved_noncoding	1e-04~1e-03	0.061381074168798	eOutliers - Under
+DEL	1e-04~1e-03	0.0664961636828645	eOutliers - Under
+DUP	1e-04~1e-03	0.00255754475703325	eOutliers - Under
+frameshift	1e-04~1e-03	0.112531969309463	eOutliers - Under
+INV	1e-04~1e-03	0.00255754475703325	eOutliers - Under
+no_variant	1e-04~1e-03	0.199488491048593	eOutliers - Under
+other_noncoding	1e-04~1e-03	0.163682864450128	eOutliers - Under
+splice_acceptor_variant	1e-04~1e-03	0.010230179028133	eOutliers - Under
+splice_donor_variant	1e-04~1e-03	0.0358056265984655	eOutliers - Under
+splice_region_variant	1e-04~1e-03	0.0920716112531969	eOutliers - Under
+stop	1e-04~1e-03	0.0716112531969309	eOutliers - Under
+TE	1e-04~1e-03	0.0127877237851662	eOutliers - Under
+TSS	1e-04~1e-03	0.0818414322250639	eOutliers - Under
+BND	1e-05~1e-04	0.0122699386503067	eOutliers - Under
+CNV	1e-05~1e-04	0.049079754601227	eOutliers - Under
+coding	1e-05~1e-04	0.00613496932515337	eOutliers - Under
+conserved_noncoding	1e-05~1e-04	0.0736196319018405	eOutliers - Under
+DEL	1e-05~1e-04	0.0920245398773006	eOutliers - Under
+DUP	1e-05~1e-04	0.00613496932515337	eOutliers - Under
+frameshift	1e-05~1e-04	0.110429447852761	eOutliers - Under
+no_variant	1e-05~1e-04	0.134969325153374	eOutliers - Under
+other_noncoding	1e-05~1e-04	0.128834355828221	eOutliers - Under
+splice_acceptor_variant	1e-05~1e-04	0.0429447852760736	eOutliers - Under
+splice_donor_variant	1e-05~1e-04	0.0552147239263804	eOutliers - Under
+splice_region_variant	1e-05~1e-04	0.0858895705521472	eOutliers - Under
+stop	1e-05~1e-04	0.141104294478528	eOutliers - Under
+TSS	1e-05~1e-04	0.0613496932515337	eOutliers - Under
+BND	1e-07~1e-05	0.0253164556962025	eOutliers - Under
+CNV	1e-07~1e-05	0.113924050632911	eOutliers - Under
+conserved_noncoding	1e-07~1e-05	0.0443037974683544	eOutliers - Under
+DEL	1e-07~1e-05	0.0569620253164557	eOutliers - Under
+DUP	1e-07~1e-05	0.0189873417721519	eOutliers - Under
+frameshift	1e-07~1e-05	0.183544303797468	eOutliers - Under
+no_variant	1e-07~1e-05	0.0822784810126582	eOutliers - Under
+other_noncoding	1e-07~1e-05	0.10126582278481	eOutliers - Under
+splice_acceptor_variant	1e-07~1e-05	0.0253164556962025	eOutliers - Under
+splice_donor_variant	1e-07~1e-05	0.0379746835443038	eOutliers - Under
+splice_region_variant	1e-07~1e-05	0.0949367088607595	eOutliers - Under
+stop	1e-07~1e-05	0.158227848101266	eOutliers - Under
+TSS	1e-07~1e-05	0.0569620253164557	eOutliers - Under
+BND	nonOutlier	0.00175491501855435	eOutliers - Under
+CNV	nonOutlier	0.00401033682641001	eOutliers - Under
+coding	nonOutlier	0.0142623493244205	eOutliers - Under
+conserved_noncoding	nonOutlier	0.0271551110329287	eOutliers - Under
+DEL	nonOutlier	0.00649925866358405	eOutliers - Under
+DUP	nonOutlier	0.00127325576525185	eOutliers - Under
+frameshift	nonOutlier	0.000436634583972055	eOutliers - Under
+INV	nonOutlier	7.95784853282403e-05	eOutliers - Under
+no_variant	nonOutlier	0.409821869843105	eOutliers - Under
+other_noncoding	nonOutlier	0.499736134496017	eOutliers - Under
+splice_acceptor_variant	nonOutlier	0.000205228725320199	eOutliers - Under
+splice_donor_variant	nonOutlier	0.000215699578652862	eOutliers - Under
+splice_region_variant	nonOutlier	0.00368574037309745	eOutliers - Under
+stop	nonOutlier	0.00048375342396904	eOutliers - Under
+TE	nonOutlier	0.00808559294348252	eOutliers - Under
+TSS	nonOutlier	0.0222945409159065	eOutliers - Under
