@@ -21,13 +21,13 @@ out_dir = '~/gtex_v8_rare_variant_figure_generation/generated_figures/'
 dcols = c('#7F5A83', '#0D324D', '#BFCDE0')
 names(dcols) = c('aseOutliers', 'sOutliers', 'eOutliers')
 
-### panel A ###
+### panel A - counts of outliers and outlier-associated variants per individual ###
 outlier_counts = fread(paste0(data_dir, 'fig5A_input_data.txt'))
 outlier_counts$variable = factor(outlier_counts$variable, levels=c('Outliers', 'Outlier RV', 'Coloc Outlier RV', 'Watershed > 0.5', 'Watershed > 0.7', 'Watershed > 0.9'))
 outlier_counts$Type = factor(outlier_counts$Type, levels=c('eOutliers', 'aseOutliers', 'sOutliers'))
 
 fig_5A = ggplot(outlier_counts, aes(x=variable,y=value+1)) + 
-  geom_boxplot(aes(fill=Type),outlier.size = 0.75) + theme_bw() + # removed outlier.alpha=0.5
+  geom_boxplot(aes(fill=Type),outlier.size = 0.75) + theme_bw() + 
   xlab('') + ylab('Number per individual') +
   scale_fill_manual(values=dcols) +
   scale_y_log10() +
@@ -37,7 +37,7 @@ fig_5A = ggplot(outlier_counts, aes(x=variable,y=value+1)) +
         legend.key.height=unit(0.05,'in'),
         axis.text.x=element_text(hjust=1,angle=35))
 
-### panel B ###
+### panel B - distribution of variant effect size percentiles across categories ###
 ukbb_any_coloc = fread(paste0(data_dir, 'fig5B_input_data.txt'))
 my_comparisons <- list(c("Coloc Outlier", "Outlier"), c("Coloc Outlier", "Non-Outlier"),c("Outlier", "Non-Outlier"))
 ukbb_any_coloc$Category = factor(ukbb_any_coloc$Category, levels=c('Non-Outlier', 'Outlier', 'Coloc Outlier'))
@@ -48,7 +48,7 @@ fig_5B = ggplot(ukbb_any_coloc, aes(x=Category,y=VPercentile)) +
                      method.args=list(alternative="greater"), label="p.signif", tip.length=0) +
   gtex_v8_figure_theme() + theme(axis.text.x=element_text(hjust=1,angle=35))
 
-### panel C ###
+### panel C - proportion of predicted functional variants falling in top quarter of effect sizes across co-localized traits ###
 hit_random_table = fread(paste0(data_dir, 'fig5C_input_data.txt'))
 hit_random_table$Posterior = factor(hit_random_table$Posterior, levels=c(0.01, 0.05, 0.25, 0.5, 0.75, 0.9))
 fig_5C = ggplot(hit_random_table %>% filter(Category == 'Random', Model == 'Watershed'), aes(x=Posterior,y=Prop)) + geom_boxplot() +
@@ -56,7 +56,7 @@ fig_5C = ggplot(hit_random_table %>% filter(Category == 'Random', Model == 'Wate
   theme_bw() + xlab('Posterior threshold') + ylab('Proportion in top 25%') +
   gtex_v8_figure_theme() 
 
-### panel D ###
+### panel D - example rare variant-trait association in asthma ###
 asthma_pval_data = fread(paste0(data_dir, 'fig5D_pval_input_data.txt'))
 
 asthma_pval_data$IsVar = factor(asthma_pval_data$IsVar, levels=c('VOI', 'leadSNP', 'Other'))
@@ -82,7 +82,7 @@ fig_5D2 = ggplot(asthma_effect_sizes, aes(x=minor_AF,y=abs(beta_scaled))) +
 
 fig_5D <- plot_grid(fig_5D1, fig_5D2, labels = NULL, nrow=2)
 
-### panel E ###
+### panel E - example rare variant-trait association in high cholesterol ###
 chol_pval_data = fread(paste0(data_dir, 'fig5E_pval_input_data.txt'))
 
 fig_5E1 = ggplot(chol_pval_data, aes(x=Pos,y=-log10(pval))) + geom_point(size=0.5) + 
