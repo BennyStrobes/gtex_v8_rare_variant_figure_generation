@@ -101,12 +101,12 @@ fig_3E = ggplot(enh_risks, aes(x=Type,y=Riskratio,Group=Zscore)) +
   ggtitle('') + geom_hline(yintercept=1, linetype="dashed", colour="darkgrey") +
   theme(panel.border = element_blank()) +
   gtex_v8_figure_theme() +
-  theme(legend.position = c(0.9, 0.85),
+  theme(legend.position = c(0.8, 0.85),
         legend.direction = 'vertical',
         legend.key.size=unit(0.05,'in'))
 
 ### combine
-first_column <- plot_grid(fig_3B, labels = c('A'), nrow=1)
-second_column <- plot_grid(fig_3A, fig_3C, fig_3D, fig_3E, labels = c('B', 'C', 'D', 'E'), ncol=4, axis='tblr', align='h')
+first_column <- plot_grid(fig_3A, labels = c('A'), nrow=1)
+second_column <- plot_grid(fig_3B, fig_3C, fig_3D, fig_3E, labels = c('B', 'C', 'D', 'E'), ncol=4, axis='tblr', align='h')
 fig_3 = plot_grid(first_column, second_column, nrow = 2, align='hv', rel_heights = c(1.5,1))
 ggsave(fig_3, file=paste0(out_dir, 'fig3.pdf'), width=7.2, height=7.2,units="in")
