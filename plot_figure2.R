@@ -6,7 +6,7 @@ library(cowplot)
 theme_set(theme_cowplot())
 library(ggseqlogo)
 
-
+# Standard R theme for gtex v8 rare variant paper
 gtex_v8_figure_theme <- function() {
 	return(theme(plot.title = element_text(face="plain",size=8, hjust=0.5), text = element_text(size=8),axis.text=element_text(size=7), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"), legend.text = element_text(size=7), legend.title = element_text(size=8)))
 }

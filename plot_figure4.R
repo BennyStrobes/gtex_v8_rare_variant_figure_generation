@@ -11,70 +11,73 @@ gtex_v8_figure_theme <- function() {
 }
 
 make_panel_4b <- function(theta_pair) {
+    # Initialize mat to keep track of edge weights
+    # first row corresponds to expression
+    # secnod row corresponds to ASE
+    # thrid row corresponds to splicing
 	mat <- matrix(0, 3, 3)
-	#mat[1,2] <- theta_pair[1,1]
-	#mat[2,1] <- theta_pair[1,1]
-	#mat[1,3] <- theta_pair[1,2]
-	#mat[3,1] <- theta_pair[1,2]
-	#mat[3,2] <- theta_pair[1,3]
-	#mat[2,3] <- theta_pair[1,3]
+
+    # Fill in mat
+    # Splicing-ASE pair
 	mat[3,2] <- theta_pair[1,2] 
 	mat[2,3] <- theta_pair[1,2]
+    # Expression-ASE pair
 	mat[1,2] <- theta_pair[1,3] 
 	mat[2,1] <- theta_pair[1,3]
+    # Splicing-Expression pair
 	mat[1,3] <- theta_pair[1,1] 
 	mat[3,1] <- theta_pair[1,1]
 
-	melted_corr <- melt(mat)
-
-	
+    # Melt mat to easily make geom_tile
+	melted_corr <- melt(mat)	
     # Axis labels are factors
     melted_corr$X1 <- factor(melted_corr$X1)
     melted_corr$X2 <- factor(melted_corr$X2)
 
     #  PLOT!
     heatmap <- ggplot(data=melted_corr, aes(x=X1, y=X2)) + geom_tile(aes(fill=value)) #+ scale_fill_gradient(low="grey",high="plum2")
-
     heatmap <- heatmap + scale_fill_distiller(palette = "Blues", direction=1, na.value = "white")
-
     heatmap <- heatmap + theme(axis.text.x = element_text(angle = 0, vjust=.5),legend.position="bottom") 
     heatmap <- heatmap + gtex_v8_figure_theme()
     heatmap <- heatmap + labs(fill="Edge weight",x = "", y="")
-
     heatmap <- heatmap + scale_x_discrete(breaks=c("1", "2", "3"),labels=c("Expresssion", "ASE", "Splicing"))
     heatmap <- heatmap + scale_y_discrete(breaks=c("1", "2", "3"),labels=c("Expression", "ASE", "Splicing"))
-
+    # Extract legend
     legend <- get_legend(heatmap)
 
-    #combined <- plot_grid(heatmap+theme(legend.position="none"), legend, ncol=1,rel_heights=c(1,.15))
+    # Merge plot and legend in specified orientation using cowplot
     combined <- ggdraw() + draw_plot(heatmap+theme(legend.position="none"),0,.15,1,.85) + draw_plot(legend,.2,-.33,1,1)
 
 	return(combined)
 }
 
 make_panel_4c <- function(df) {
-	# Set order
+	# Set order of outliers
 	df$outlier_type=factor(df$outlier_type, levels=c("eOutlier", "aseOutlier","sOutlier"))
+    # Set order of model types
 	df$model_type=factor(df$model_type, levels=c("GAM", "Watershed"))
-	# Make plot
+	
+    # Make barplot
 	p <- ggplot(data=df, aes(x=model_type, y=absolute_risk, fill=outlier_type)) +
 		geom_bar(stat="identity", color="black", position=position_dodge())+
   		gtex_v8_figure_theme() + 
   		labs(x="", y="Proportion of variants\nleading to outlier", fill="") + 
   		scale_fill_manual(values=c("#BFCDE0", "#7F5A83", "#0D324D"))
 
+    # Extract legend
   	legend <- get_legend(p)
-
+    # Merge plot and legend in specified orientation using cowplot
   	combined <- ggdraw() + draw_plot(p + theme(legend.position="none"),0, -.1, 1,1.1) + draw_plot(legend, .27, .33, 1,1)
-
 
 	return(combined)
 }
 
 make_panel_4d <- function(df) {
-
+    # Set ordering of model types
 	df$prediction_type=factor(df$prediction_type, levels=c("Watershed","RIVER", "GAM"))
 
+    # Make Precision-recall curve for ASE
+    # This plot contains 3 curves (one for Watershed, RIVER, and GAM)
 	outlier_type <- "ase"
 	outlier_name <- "ASE"
   	plotter_ase <- ggplot(data=df[as.character(df$outlier_type)==outlier_type,], aes(x=recall, y=precision, group=prediction_type)) + geom_line(aes(linetype=prediction_type, colour=prediction_type)) + 
@@ -88,6 +91,8 @@ make_panel_4d <- function(df) {
                 gtex_v8_figure_theme() + 
                 draw_label(outlier_name,x=.5,y=.95,size=8)
 
+    # Make Precision-recall curve for splicing
+    # This plot contains 3 curves (one for Watershed, RIVER, and GAM)
 	outlier_type <- "splicing"
 	outlier_name <- "Splicing"
   	plotter_splice <- ggplot(data=df[as.character(df$outlier_type)==outlier_type,], aes(x=recall, y=precision, group=prediction_type)) + geom_line(aes(linetype=prediction_type, colour=prediction_type)) + 
@@ -101,9 +106,11 @@ make_panel_4d <- function(df) {
                 gtex_v8_figure_theme() +
                  draw_label(outlier_name,x=.5,y=.95,size=8)
 
+    # Make Precision-recall curve for Expression
+    # This plot contains 3 curves (one for Watershed, RIVER, and GAM)
 	outlier_type <- "total_expression"
 	outlier_name <- "Expression"
-  	plotter_te <- ggplot(data=df[as.character(df$outlier_type)==outlier_type,], aes(x=recall, y=precision, group=prediction_type)) + geom_line(aes(linetype=prediction_type, colour=prediction_type)) + 
+  	plotter_expression <- ggplot(data=df[as.character(df$outlier_type)==outlier_type,], aes(x=recall, y=precision, group=prediction_type)) + geom_line(aes(linetype=prediction_type, colour=prediction_type)) + 
                 labs(x="Recall", y="Precision", group="") +
                 scale_y_continuous(expand = c(0, 0), limits = c(0, 1)) + 
                 scale_x_continuous(expand = c(0, 0), limits = c(0, 1)) + 
@@ -114,19 +121,25 @@ make_panel_4d <- function(df) {
                 gtex_v8_figure_theme() + 
                 draw_label(outlier_name,x=.5,y=.95,size=8)
 
+    # Get legend from ASE Plot
     legend <- get_legend(plotter_ase + theme(legend.position="bottom"))
-    combined_plots <- plot_grid(plotter_te + theme(legend.position="none"), plotter_ase + theme(legend.position="none"), plotter_splice+ theme(legend.position="none"), rel_widths=c(1,1,1), nrow=1)
 
+    # Combine PR-curves from Expression, ASE, and splicing into 1 plot via cowplot
+    combined_plots <- plot_grid(plotter_expression + theme(legend.position="none"), plotter_ase + theme(legend.position="none"), plotter_splice+ theme(legend.position="none"), rel_widths=c(1,1,1), nrow=1)
+
+    # Merge combined plot with single legend via cowplot
 	combined <- ggdraw() + draw_plot(combined_plots,0,.07,1,.9) + draw_plot(legend,.38,-.40,1,1)
 	
 	return(combined)
 }
 
 make_panel_4f <- function(df) {
-	# Set order of factors
+	# Set order of Outlier types
 	df$outlier_type=factor(df$outlier_type, levels=c("Expression", "ASE","Splicing"))
+    # Set order of modles
 	df$method=factor(df$method,levels=c("GAM", "RIVER", "Watershed"))
-	# Make boxplot
+
+	# Make boxplot corresponding to AUC across tissues
 	boxplot <- ggplot(df, aes(x=method, y=auc, fill=outlier_type)) + geom_boxplot() +
 				gtex_v8_figure_theme() + 
 				xlab("Tissue Model") +
@@ -140,7 +153,7 @@ make_panel_4f <- function(df) {
 load_in_gtex_tissue_colors <- function(tissue_colors_input_file) {
 	# Read in tissue colors and names
 	tissue_colors = read.table(tissue_colors_input_file, header = T, stringsAsFactors = F, sep = "\t")
-	# slight mislabeling
+	# correction to minor mislabeling
 	for (tiss_num in 1:length(tissue_colors$tissue_id)) {
 		if (tissue_colors$tissue_id[tiss_num] == "Brain_Spinal_cord_cervical_c1") {
 			tissue_colors$tissue_id[tiss_num] = "Brain_Spinal_cord_cervical_c.1"
@@ -175,10 +188,13 @@ make.point.plot = function(tissuesdf, colors, vertical = TRUE){
 }
 
 make_panel_4e <- function(theta_pair_mat, tissue_colors) {
-	tissue_names <- colnames(theta_pair_mat)
-	 order <- hclust( dist(theta_pair_mat, method = "euclidean"), method = "ward.D" )$order
+	# Get ordered names of tissues according theta_pair_mat (theta_pair_mat is the edge weight matrix)
+    tissue_names <- colnames(theta_pair_mat)
+    # Perform hierarchial clustering on tissues according to their edge weights
+	order <- hclust( dist(theta_pair_mat, method = "euclidean"), method = "ward.D" )$order
 
-	#######
+	#######################
+    # Reformat tissue colors
 	tissue_colors$tissue_id = factor(tissue_colors$tissue_id, levels = as.character(tissue_names[order]))
 	#print(tissue_colors$tissue_id)
 	tissue_colors$order = as.numeric(tissue_colors$tissue_id)
@@ -186,22 +202,22 @@ make_panel_4e <- function(theta_pair_mat, tissue_colors) {
 	colors = paste0("#",tissue_colors$tissue_color_hex)
 	names(colors) = tissue_colors$tissue_id
 
+
+    # Make dot plots (that will be the boarders of the heatmap) corresponding to tissue types
 	colors.vertical = make.point.plot(tissue_colors, colors)
 	colors.horizontal = make.point.plot(tissue_colors, colors, vertical = FALSE)
 
-
-	#######
-
+    # Add row and column names to theta_pair_mat
 	rownames(theta_pair_mat) <- tissue_names
 	colnames(theta_pair_mat) <- tissue_names
 
+    # Melt theta_pair_mat to make data compatible with geom_tile
 	melted_mat <- melt(theta_pair_mat)
     # Axis labels are factors
     melted_mat$X1 <- factor(melted_mat$X1)
     melted_mat$X2 <- factor(melted_mat$X2)
 
-
-    #  Use factors to represent covariate and pc name
+    #  Order tissue factors by their hierarchial clustering order
     melted_mat$X1 <- factor(melted_mat$X1, levels = rownames(theta_pair_mat)[order])
     melted_mat$X2 <- factor(melted_mat$X2, levels = rownames(theta_pair_mat)[order])
 
@@ -213,6 +229,7 @@ make_panel_4e <- function(theta_pair_mat, tissue_colors) {
     heatmap <- heatmap + gtex_v8_figure_theme() + theme(axis.text.x=element_blank(), axis.text.y=element_blank(), axis.ticks.x=element_blank(), axis.ticks.y=element_blank())
     heatmap <- heatmap + labs(x = "Tissue", y = "Tissue",fill="Edge Weight")
     
+    # Merge heatmap with tissue-colors dot-plots via Cowplot
    	combined = ggdraw() +
         draw_plot(heatmap, .05,.05,.95,0.95) +
         draw_plot(colors.vertical, -.344, .084, .903, .946) + 
@@ -235,7 +252,9 @@ fig4f_input_file = "processed_input_data/figure4/figure4f_tissue_watershed_pr_au
 
 ##############
 # Load in data
+# File contains mapping from GTEx tissue name to HEX color (standardized for gtex)
 gtex_tissue_colors <- load_in_gtex_tissue_colors(tissue_colors_input_file)
+# Input files for each panel
 watershed_edge_weights <- read.table(fig4b_input_file, header=FALSE, sep="\t")
 fig4c_df <- read.table(fig4c_input_file, header=TRUE, sep="\t")
 fig4d_df <- read.table(fig4d_input_file, header=TRUE, sep="\t")
@@ -253,10 +272,6 @@ fig4f <- make_panel_4f(fig4f_df)
 
 ###############
 # Combine panels with cowplot
-
-
-
-
 row_1 <- plot_grid(NULL, fig4b, fig4c, ncol=3, labels=c("A","B","C"), rel_widths=c(1,1.1,1))
 row_2 <- plot_grid(fig4d, labels=c("D"))
 row_3 <- plot_grid(fig4e, fig4f,ncol=2, rel_widths=c(1,.75), labels=c("E", "F"))
