@@ -18,7 +18,6 @@
 		* Column3: "promotor_motif": The name of the promotor motif
 		* Column10: "ExpBin": The eOutlier bin. (either Under, Control, or Over)
 		* Column12: "NumBin": The proportion of rare variants in the given promotor for the given eOutlier bin
-* **fig2d_inliers_input_data.txt**
-* **fig2d_outliers_input_data.txt**
+* **fig2d_inliers_input_data.txt** and **fig2d_outliers_input_data.txt**
 * **fig2e_input_data.txt**
 * **fig2f_input_data.txt**
