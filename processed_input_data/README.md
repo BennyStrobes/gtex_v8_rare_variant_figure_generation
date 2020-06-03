@@ -73,6 +73,49 @@
 		* Column1: "odds_ratio": The junction usage of the splice site
 		* Column2: "type": the type of rare variant. Either "Purine to Pyrimidine" or "Pyrimidine to Purine"
 
+## Figure 3
+* **fig3a_input_data.txt**
+	* Data frame containing the median proportion of single tissue outliers that replicate across all other tissues
+	* Relevent column desciptors (base 1):
+		* Column1: "tiss": Short tissue code (i.e. ADPSBQ)
+		* Column2: "frac": Median proportion of outliers from given tissue that replicate in other tissues
+		* Column3: "min": Minimum proportion of outliers from given tissue that replicate in other tissues
+		* Column4: "max": Maximum proportion of outliers from given tissue that replicate in other tissues
+		* Column5: "type": Type of outlier (either eOutlier, sOutlier, or aseOutlier)
+		* Column6: "tissue_name": Long tissue name (i.e. Adipose - Subcutaneous)
+* **fig3b_input_data.txt**
+	* Data frame containing estimated relative risk of rare variants nearby single tissue outliers across tissues at varying outlier p-value thresholds
+	* Relevent column desciptors (base 1):
+		* Column1: "tissue": Tissue name
+		* Column2: "ratio": Relative risk estimate of rare variants nearby outliers in the given tissue
+		* Column3: "lower.q": Lower bound of 95% confidence interval around estimate
+		* Column4: "upper.q": Upper bound of 95% confidence interval around estimate
+		* Column10: "sig": Outlier p-value threshold
+		* Column11: "outlier_type": Type of outlier (either eOutlier, sOutlier, or aseOutlier)
+* **fig3c_input_data.txt**
+	* Data frame containing estimated relative risk of rare variants of varying annotation categories nearby single tissue outliers across tissues
+	* Relevent column desciptors (base 1):
+		* Column1: "tissue": Tissue name
+		* Column2: "ratio": Relative risk estimate of rare variants nearby outliers in the given tissue
+		* Column3: "lower.q": Lower bound of 95% confidence interval around estimate
+		* Column4: "upper.q": Upper bound of 95% confidence interval around estimate
+		* Column9: "Variant_type": Variant annotation
+		* Column11: "outlier_type": Type of outlier (either eOutlier, sOutlier, or aseOutlier)
+* **fig3d_input_data.txt**
+	* Data frame containing proportion of tissues supporting outlier calls underlying multi-tissue eOutliers and correlation outliers
+	* Relevent column descriptors (base 1)
+		* Column3: "Method": Outlier type (MEDZ or correlation) 
+		* Column4: "npass": Number of tissues with |Z| > 3 for that gene-individual outlier
+		* Column3: "prop": Proportion (range [0,1]) of measured tissue with outlier signal for that outlier
+* **fig3e_input_data.txt**
+	* Data frame containing relative risk estimates for rare variants occurring in tissue-specific enhancers nearby tissue-specific outliers
+	* Relevent column descriptors (base 1)
+		* Column1: "Riskratio": Relative risk estimate
+		* Column2: "Lower": Lower bound of 95% confidence interval around estimate
+		* Column3: "Upper": Upper bound of 95% confidence interval around estimate
+		* Column5: "Type": Indicates whether the relative risk was calculated using enhancer regions matched to the tissue driving the outlier signal or not (either Matched or Unmatched)
+		* Column6: "Zscore": |Z-score| threshold used to determine tissue-specificity of correlation outliers
+		
 ## Figure 4
 * **fig4b_watershed_edge_weights_input_data.txt**
 	* File containing Watershed learned edge weights 
@@ -106,6 +149,55 @@
 		* Column1: "outlier_type": either ASE, Splicing, or Expression
 		* Column2: "auc": Area under the precision-recall curve
 		* Column3: "method": The model used: either Watershed, RIVER, or GAM
+
+## Figure 5
+* **fig5a_input_data.txt**
+	* File containing number of outliers per individual across different filters
+	* Relevent column descriptors (base 1)
+		* Column2: "Type": Type of outlier (either eOutlier, sOutlier, or aseOutlier)
+		* Column3: "variable": Filter applied (either Outliers, Outlier RV, Watershed > 0.5, Watershed > 0.9)
+		* Column4: "value": Count per individual
+* **fig5b_input_data.txt**
+	* Data frame containing variant effect size percentiles in UKBB traits across categories
+	* Relevent column descriptors (base 1)
+		* Column1: "VID": Variant chromosome and position (chr:pos)
+		* Column2: "VPercentile": Percentile of variant effect size for the given trait
+		* Column3: "Gene": Associated gene 
+		* Column4: "Trait": UKBB trait code
+		* Column5: "Category": Category of the given variant-gene (either Non-outlier, Outlier, or Coloc Outlier)
+* **fig5c_input_data.txt**
+	* Data frame containing the proportion of variants falling in the top 25th percentile in co-localized regions for relevant traits split by Watershed posterior
+	* Relevent column descriptors (base 1):
+		* Column1: "Posterior": Watershed posterior threshold
+		* Column2: "Category": Indicates whether the values are from a random permutation or actual
+		* Column3: "Prop": Proportion of variants in top 25th percentile at the given threshold
+		* Column4: "Model": either Watershed or CADD
+* **fig5d_pval_input_data.txt**
+	* File containing GWAS p-values for all variants in a given co-localized region for Asthma
+	* Relevent column descriptors (base 1):
+		* Column1: "Chr": Chromosome
+		* Column2: "Pos": Position
+		* Column3: "pval": GWAS association p-value
+		* Column5: "IsVar": Indicates whether the variant is the outlier-associated variant with a high Watershed score
+* **fig5d_betas_input_data.txt**
+	* File containing GWAS effect sizes for all variants in a given co-localized region for Asthma
+	* Relevent column descriptors (base 1):
+		* Column2: "minor_AF": Variant allele frequency in UKBB
+		* Column9: "VOI": Indicates whether variant is high-scoring Watershed variant
+		* Column10: "beta_scaled": GWAS effect size scaled by case-control ratio
+* **fig5e_pval_input_data.txt**
+	* File containing GWAS p-values for all variants in a given co-localized region for High cholesterol
+	* Relevent column descriptors (base 1):
+		* Column1: "Chr": Chromosome
+		* Column2: "Pos": Position
+		* Column3: "pval": GWAS association p-value
+		* Column5: "IsVar": Indicates whether the variant is the outlier-associated variant with a high Watershed score
+* **fig5e_betas_input_data.txt**
+	* File containing GWAS effect sizes for all variants in a given co-localized region for Asthma
+	* Relevent column descriptors (base 1):
+		* Column2: "minor_AF": Variant allele frequency in UKBB
+		* Column9: "VOI": Indicates whether variant is high-scoring Watershed variant
+		* Column10: "beta_scaled": GWAS effect size scaled by case-control ratio
 
 ## Figure S4
 * **figS4_input_data.txt**
