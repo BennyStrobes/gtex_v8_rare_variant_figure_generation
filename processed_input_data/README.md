@@ -118,8 +118,72 @@
 		* Column1: "odds_ratio": The junction usage of the splice site
 		* Column2: "type": The type of rare variant in the consensus sequence. Does it create the consensus or destroy the concensus sequence.
 
+## Figure S18
+* **figS18_input_data.txt**
+	* Data frame containing types of mutations (the nucleotide changes) occuring at each position around splice sites
+	* Relevent column descriptors (base 1)
+		* Column1: "mutations": The nucleotide change corresponding to the rare variant 
+		* Column2: "distance_to_ss": The position (relative to the nearest splice site) of the rare variant
+		* Column3: "odds_ratio": The exp(junction usage of the splice site).. ie. not on log scale
+
+## Figure S19
+* **figS19_outliers_input_data.txt** and **figS19_inliers_input_data.txt**
+	* Both of these files are formatted in the same way
+	* figS19_inliers_input_data.txt contains positional location of rare variants near inliers splice sites
+	* figS19_outliers_input_data.txt contains positional location of rare variants near outlier splice sites
+	* Relevent column descriptors (base 1)
+		* Column1: "splice_site_type": Whether nearby splice site to variant is a donor or acceptor splice site
+		* Column2: "distance": Positional location of variant around the splice site
+		* Column3: "annotated_splice_site": Boolean variable concerning whether splice site is annotated or novel
+		* Column4: "variant_allele": Nucleotide of variant allele
+		* Column5: "major_allele": Nucleotide of common allele
+
+## Figure S20
+* **figS20_outliers_input_data.txt** and **figS20_inliers_input_data.txt**
+	* Both of these files are formatted in the same way
+	* figS20_inliers_input_data.txt contains positional location of rare variants near inliers splice sites
+	* figS20_outliers_input_data.txt contains positional location of rare variants near outlier splice sites
+	* Relevent column descriptors (base 1)
+		* Column1: "splice_site_type": Whether nearby splice site to variant is a donor or acceptor splice site
+		* Column2: "distance": Positional location of variant around the splice site
+		* Column3: "annotated_splice_site": Boolean variable concerning whether splice site is annotated or novel
+		* Column4: "variant_allele": Nucleotide of variant allele
+		* Column5: "major_allele": Nucleotide of common allele
 
 
+## Figure S24
+* **figS24_tissue_names_input_data.txt**
+	* File containing ordered list of gtex tissue names
+* **figS24_tissue_colors_input_data.txt**
+	* File containing mapping from gtex tissue names to colors
+* **figS24_tissue_by_tissue_variant_sOutlier_overlap_input_data.txt**
+	* Data frame containing contingency table necessary to compute relative risk of rare variants within sOutliers in each tissue
+	* Relevent column descriptors (base 1)
+		* Column1: "Tissue_name"
+		* Column2: "number_of_variants_in_outliers": Number of sOutlier LeafCutter clusters in this tissue with a nearby rare variant
+		* Column3: "number_of_outliers": Number of sOutlier LeafCutter clusters in this tissue
+		* Column4: "number_of_variants_in_inliers": Number of sInlier LeafCutter clusters in this tissue with a nearby rare variant
+		* Column5: "number_of_inliers": Number of sInlier LeafCutter clusters in this tissue
+* **figS24_tissue_by_tissue_concensus_jxn_usage_input_data.txt**
+	* Data frame containing junction usage of the closest splice sites to variants that lie in consensus sequence
+	* Relevent column descriptors (base 1):
+		* Column1: "odds_ratio": The junction usage of the splice site
+		* Column2: "type": The type of rare variant in the consensus sequence. Does it create the consensus or destroy the concensus sequence.
+* **figS24_tissue_by_tissue_ppt_jxn_usage_input_data.txt**
+	* Data frame containing junction usage of the closest splice sites to variants that lie in PPT
+	* Relevent column descriptors (base 1):
+		* Column1: "odds_ratio": The junction usage of the splice site
+		* Column2: "type": The type of rare variant in the PPT. Does it create the consensus or destroy the PPT
+
+
+## Figure S27
+* **figS27_input_data.txt**
+	* Data frame containing precision and recall of Watershed and CADD for each outlier type
+	* Relevent column descriptors (base 1):
+		* Column1: "precision"
+		* Column2: "recall"
+		* Column3: "outlier_type": either splicing, ase, or expression
+		* Column4: "prediction_type": either Watershed or CADD
 
 
 
