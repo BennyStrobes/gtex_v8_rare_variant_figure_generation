@@ -37,3 +37,5 @@
 	* Relevent column descriptors (base 1)
 		* Column1: "odds_ratio": The junction usage of the splice site
 		* Column2: "type": the type of rare variant. Either "Purine to Pyrimidine" or "Pyrimidine to Purine"
+
+## Figure 4
