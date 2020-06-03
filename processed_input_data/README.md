@@ -39,3 +39,37 @@
 		* Column2: "type": the type of rare variant. Either "Purine to Pyrimidine" or "Pyrimidine to Purine"
 
 ## Figure 4
+* **fig4b_watershed_edge_weights_input_data.txt**
+	* File containing Watershed learned edge weights 
+	* Relevent column descriptors (base 1)
+		* Column1: Edge weight between Splicing and Expression outlier signals
+		* Column2: Edge weight between Splicing and ASE outlier signals
+		* Column3: Edge weight between Expresssion and ASE outlier signals
+* **fig4c_absolute_risk_input_data.txt**
+	* Data frame containing proportion of prioritized rare variants leading to outlier
+	* Relevent column descriptors (base 1)
+		* Column2: "absolute_risk": Proportion of rare variants leading to an outlier
+		* Column3: "outlier_type": Type of outlier (either eOutlier, sOutlier, or aseOutlier)
+		* Column4: "model_type": Whether using Watershed or GAM
+* **fig4d_pr_curve_input_data.txt**
+	* Data frame containing precision and recall of Watershed, RIVER, and GAM for each outlier tyep
+	* Relevent column descriptors (base 1):
+		* Column1: "precision"
+		* Column2: "recall"
+		* Column3: "outlier_type": either splicing, ase, or expression
+		* Column4: "prediction_type": either Watershed, RIVER, or GAM
+* **fig4e_tissue_watershed_edge_weights_input_data.txt**
+	* File containing learned tissue Watershed edge weights
+	* This file is a matrix of dimension NXN where N is the number of tissues
+	* Each element of this matrix is the edge weight corresponding to the connection between the two tissues
+* **fig4e_gtex_tissue_colors_input_data.txt**
+	* File containing mapping from gtex tissue name to a specific color
+* **fig4f_tissue_watershed_pr_auc_input_data.txt**
+	* File containing area under the precision recall curve for several tissue methods used
+	* Each row corresponds to a tissue type
+	* Relevent column descriptors (base 1):
+		* Column1: "outlier_type": either ASE, Splicing, or Expression
+		* Column2: "auc": Area under the precision-recall curve
+		* Column3: "method": The model used: either Watershed, RIVER, or GAM
+
+
