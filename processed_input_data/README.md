@@ -1,1 +1,1 @@
-Directory to store processed input data required to generate figures
+# Processed input data required to generate figures
