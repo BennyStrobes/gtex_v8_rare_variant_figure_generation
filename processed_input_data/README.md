@@ -4,8 +4,9 @@
 
 
 
-**figure2**
+**Figure 2**
 * fig2a_input_data.txt
+	* hello
 * fig2b_input_data.txt
 * fig2d_inliers_input_data.txt
 * fig2d_outliers_input_data.txt
