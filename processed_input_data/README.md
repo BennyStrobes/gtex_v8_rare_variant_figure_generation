@@ -72,4 +72,58 @@
 		* Column2: "auc": Area under the precision-recall curve
 		* Column3: "method": The model used: either Watershed, RIVER, or GAM
 
+## Figure S4
+* **figS4_input_data.txt**
+	* Data frame containing information on the number of observed exon-exon junctions, LeafCutter clusters, and genes in each tissue
+	* Relevent column descriptors (base 1):
+		* Column1: "tissue"
+		* Column2: "number_of_junctions": Number of observed exon-exon junctions in this tissue
+		* Column3: "number_of_clusters": Number of observed LeafCutter clusters in this tissue
+		* Column4: "number_of_genes": Number of observed genes that the LeafCutter clusters map to in this tissue
+
+## Figure S5
+* **figS5_input_data.txt**
+	* Data frame containing SPOT gene-gene level corrected and uncorrected p-values in Muscle-Skeletal tissue
+	* Each row of data frame corresponds to a gene-individual pair
+	* Relevent column descriptors (base 1):
+		* Column 1: "corrected_pvalue": SPOT gene-level corrected p-value in Muscle-skeletal
+		* Column 2: "uncorrected_pvalue": SPOT gene-level uncorrected p-value in Muscle-skeletal
+		* Column 3: "number_of_clusters": The number of LeafCutter Clusters assigned to this gene
+
+## Figure S6
+* **figS6_input_data.txt**
+	* Data frame containing SPOT LeafCutter cluster-level p-values in Muscle-Skeletal tissue for 4 different versions of SPOT
+	* Each row of the data frame corresponds to a LeafCutter cluster-individual pair
+	* Relevent column descriptors (base 1):
+		* Column1: "standard_prior_20K_reads": SPOT LeafCutter cluster p-value using default version of SPOT
+		* Column2: "standard_prior_10K_reads": SPOT LeafCutter cluster p-value using version of SPOT with 10,000 simulated reads
+		* Column3: "standard_prior_100K_reads": SPOT LeafCutter cluster p-value using version of SPOT with 100,000 simulated reads
+		* Column4: "no_prior_20K_reads": SPOT LeafCutter cluster p-value using version of SPOT with no prior placed on the alphas
+		* Column5: "fraction": Maximum fraction of reads mapping to a single exon-exon junction in the LeafCutter cluster
+
+
+## Figure S17
+* **figS17a_input_data.txt**
+	* Data frame containing data necessary to compute relative risk of rare variants within various window sizes around splice sites for sOutliers
+	* Relevent column descriptors (base 1):
+		* Column1: "pvalues": p-value threshold used by SPOT to generate sOutliers
+		* Column2: "distance": Distance window around splice site
+		* Column3: "num_outlier_clusters": The number of LeafCutter clusters that are categorized as sOutliers
+		* Column4: "num_outlier_clusters_with_rv": The number of LeafCutter clusterrs that are categorized as sOutliers that have a nearby rare variant
+		* Column5: "num_inlier_clusters": The number of LeafCutter clusters that are categorized as not sOutliers
+		* Column6: "num_inlier_clusters_with_rv": The number of LeafCutter clusters that are categorized as not sOutliers that have a nearby rare variant
+* **figS17b_input_data.txt**
+	* Data frame containing junction usage of the closest splice sites to variants that lie in consensus sequence
+	* Relevent column descriptors (base 1):
+		* Column1: "odds_ratio": The junction usage of the splice site
+		* Column2: "type": The type of rare variant in the consensus sequence. Does it create the consensus or destroy the concensus sequence.
+
+
+
+
+
+
+
+
+
 
