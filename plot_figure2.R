@@ -43,7 +43,6 @@ make_panel_2a <- function(dist.data) {
 		geom_point(size=1.7,aes(color=Method), position=position_dodge(width=0.5)) +
 		geom_errorbar(aes(ymin = Lower, ymax = Upper),size=.2, width=0,position=position_dodge(width=0.5)) +
 		theme_bw() + ylab('') + geom_line(aes(group=Method),size=0.2) +
-		#xlab('Distance upstream from gene (kb)') + ylab('') +
 		xlab('') + ylab('') +
 		scale_y_log10() + geom_hline(yintercept=1,size=.2,color='grey') +
 		scale_color_manual(values=dcols) +
@@ -143,7 +142,7 @@ make_panel_2d <- function(inlier_distances, outlier_distances) {
 	# 3 is the intron start position (A-3) and 2 is the exon start position (A+2)
 	acceptor_df <- extract_positional_odds_ratio_data_for_all_positions_in_window(outlier_acceptor_distances, inlier_acceptor_distances, 3,2)
 
-	#Combine outliers and non-outliers into a compact data frame
+	#Combine donor and acceptor splice sites into a compact data frame
 	odds_ratio <- c(donor_df$odds_ratio, acceptor_df$odds_ratio)
 	dist_to_ss <- c(donor_df$dist_to_ss, acceptor_df$dist_to_ss)
 	ss_type <- c(rep("donor",length(donor_df$dist_to_ss)), rep("acceptor", length(acceptor_df$dist_to_ss)))
@@ -182,8 +181,12 @@ make_panel_2d <- function(inlier_distances, outlier_distances) {
 }
 
 make_panel_2e <- function(outlier_distances) {
+	# Extract mutation vector 
+	### Each element of this vector corresponds to a single rare variant
+	### For example 'C->G' corresponds to a rare variant where the rare allele is 'G' and the more common allele is 'C'
 	mutations <- as.character(outlier_distances$mutations)
-
+	# Seperate this mutation vector out into 2 vectors: refs and alts
+	## refs holds the major allele and alts holds the minor allele
 	refs <- c()
 	alts <- c()
 	for (iter in 1:length(mutations)) {
@@ -331,7 +334,7 @@ make_panel_2e <- function(outlier_distances) {
 }
 
 make_panel_2f <- function(fig2f_df) {
-	# Simply make odds-ratio boxplots for each variant type with input data
+	# Simply make odds-ratio boxplots for each variant type (purine to pyrimidine AND pyrimidine to Purine) with input data
 	plotter <- ggplot(fig2f_df, aes(x=type, y=odds_ratio, fill=type)) + geom_boxplot() + 
 		theme(text = element_text(size=12),axis.text=element_text(size=11), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"), legend.text = element_text(size=12), legend.title = element_text(size=11)) +
 		labs(x="", y="Junction usage", fill="") + 
@@ -342,6 +345,10 @@ make_panel_2f <- function(fig2f_df) {
 		theme(plot.margin = unit(c(0, 0, 0, 0), "cm"), panel.border = element_blank())
 	return(plotter)
 }
+
+
+
+
 
 ##############
 # Input data

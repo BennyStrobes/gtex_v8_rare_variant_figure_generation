@@ -35,7 +35,7 @@ make_panel_4b <- function(theta_pair) {
     melted_corr$X2 <- factor(melted_corr$X2)
 
     #  PLOT!
-    heatmap <- ggplot(data=melted_corr, aes(x=X1, y=X2)) + geom_tile(aes(fill=value)) #+ scale_fill_gradient(low="grey",high="plum2")
+    heatmap <- ggplot(data=melted_corr, aes(x=X1, y=X2)) + geom_tile(aes(fill=value))
     heatmap <- heatmap + scale_fill_distiller(palette = "Blues", direction=1, na.value = "white")
     heatmap <- heatmap + theme(axis.text.x = element_text(angle = 0, vjust=.5),legend.position="bottom") 
     heatmap <- heatmap + gtex_v8_figure_theme()
@@ -121,7 +121,7 @@ make_panel_4d <- function(df) {
                 gtex_v8_figure_theme() + 
                 draw_label(outlier_name,x=.5,y=.95,size=8)
 
-    # Get legend from ASE Plot
+    # Get legend from ASE Plot (Note: this is the same legend as found in the the Expression and Splicing plots)
     legend <- get_legend(plotter_ase + theme(legend.position="bottom"))
 
     # Combine PR-curves from Expression, ASE, and splicing into 1 plot via cowplot
@@ -194,7 +194,7 @@ make_panel_4e <- function(theta_pair_mat, tissue_colors) {
 	order <- hclust( dist(theta_pair_mat, method = "euclidean"), method = "ward.D" )$order
 
 	#######################
-    # Reformat tissue colors
+    # Reformat tissue colors data frame
 	tissue_colors$tissue_id = factor(tissue_colors$tissue_id, levels = as.character(tissue_names[order]))
 	#print(tissue_colors$tissue_id)
 	tissue_colors$order = as.numeric(tissue_colors$tissue_id)
@@ -207,7 +207,7 @@ make_panel_4e <- function(theta_pair_mat, tissue_colors) {
 	colors.vertical = make.point.plot(tissue_colors, colors)
 	colors.horizontal = make.point.plot(tissue_colors, colors, vertical = FALSE)
 
-    # Add row and column names to theta_pair_mat
+    # Add row and column names (corresponding to gtex tissues) to theta_pair_mat
 	rownames(theta_pair_mat) <- tissue_names
 	colnames(theta_pair_mat) <- tissue_names
 
@@ -237,9 +237,9 @@ make_panel_4e <- function(theta_pair_mat, tissue_colors) {
 
     return(combined)
 
-
-
 }
+
+
 
 ##############
 # Input data
