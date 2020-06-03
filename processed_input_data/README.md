@@ -186,6 +186,26 @@
 		* Column4: "prediction_type": either Watershed or CADD
 
 
+## Figure S28
+* **figS28a_input_data.txt**
+	* All 6 files (a,b,c,d,e,f) pertaining figure S28 have the same file format
+	* Each file is a data frame containing precision and recall of Watershed, RIVER, and GAM for each outlier type
+	* Relevent column descriptors (base 1):
+		* Column1: "precision"
+		* Column2: "recall"
+		* Column3: "outlier_type": either splicing, ase, or expression
+		* Column4: "prediction_type": either Watershed, RIVER, or GAM
+
+## Figure S29
+* **figS29_river_input_data.txt**
+	* Confusion matrix for RIVER in jointly predicting outlier status of all three outlier signals (class) using held out pairs of individuals. 
+* **figS29_watershed_exact_input_data.txt**
+	* Confusion matrix for Watershed (with exact inference) in jointly predicting outlier status of all three outlier signals (class) using held out pairs of individuals. 
+* **figS29_watershed_approximate_input_data.txt**
+	* Confusion matrix for Watershed (with approximate inference) in jointly predicting outlier status of all three outlier signals (class) using held out pairs of individuals. 
+* For all three files, the first element of the binary class abbreviations represents median splicing outlier status, the second element of the class abbreviations represents median expression outlier status, and the third element of the class abbreviations represents ASE outlier status.
+
+
 
 
 
