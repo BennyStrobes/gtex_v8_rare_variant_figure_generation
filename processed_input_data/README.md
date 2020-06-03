@@ -203,10 +203,40 @@
 	* Confusion matrix for Watershed (with exact inference) in jointly predicting outlier status of all three outlier signals (class) using held out pairs of individuals. 
 * **figS29_watershed_approximate_input_data.txt**
 	* Confusion matrix for Watershed (with approximate inference) in jointly predicting outlier status of all three outlier signals (class) using held out pairs of individuals. 
-* For all three files, the first element of the binary class abbreviations represents median splicing outlier status, the second element of the class abbreviations represents median expression outlier status, and the third element of the class abbreviations represents ASE outlier status.
+* For all three files, the first element of the binary class abbreviation labels represents median splicing outlier status, the second element of the class abbreviations represents median expression outlier status, and the third element of the class abbreviations represents ASE outlier status.
 
+## Figure S30
+* **figS30_input_data.txt**
+	* Data frame containing proportion of prioritized rare variants leading to outlier
+	* Relevent column descriptors (base 1)
+		* Column1: "watershed_threshold": Watershed threshold used to prioritize variants
+		* Column2: "absolute_risk": Proportion of rare variants leading to an outlier
+		* Column3: "outlier_type": Type of outlier (either eOutlier, sOutlier, or aseOutlier)
+		* Column4: "model_type": Whether using Watershed, CADD, or GAM
 
+## Figure S31
+* **figS31a_input_data.txt**
+	* Data frame containing Watershed genomic annotation coefficients (when model was trained via exact inference and when model was trained via approximate inference)
+	* Relevent column descriptors (base 1)
+		* Column1: "exact_betas": Genomic annotation coefficient when model was trained via exact inference
+		* Column2: "approximate_betas": Genomic annotation coefficient when model was trained via approximate inference
+		* Column3: "outlier_class": Outlier type (ase, splicing, or expression) for which genomic annotation coefficent corresponds to
+* **figS31b_input_data.txt**
+	* Data frame containing precision and recall of Watershed-exact, Watershed-approximate, and RIVER for each outlier type
+	* Relevent column descriptors (base 1):
+		* Column1: "precision"
+		* Column2: "recall"
+		* Column3: "outlier_type": either splicing, ase, or expression
+		* Column4: "inference": Either exact or approximate
+		* Column5: "prediction_type": either Watershed or RIVER
 
+## Figure S32
+* **figS31_ase_input_data.txt** and **figS31_splicing_input_data.txt** and **figS31_expression_input_data.txt**
+	* One file for each of the three outlier types
+	* Each is formatted identically
+		* Each files contains learned tissue Watershed edge weights
+		* Each file is a matrix of dimension NXN where N is the number of tissues
+		* Each element of this matrix is the edge weight corresponding to the connection between the two tissues
 
 
 
