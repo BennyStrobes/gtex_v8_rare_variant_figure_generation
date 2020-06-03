@@ -106,9 +106,9 @@ fig_1D = ggplot(variant_props, aes(x=pval_bin,y=Proportion,Group=Variant_categor
 dcols = c('#7F5A83', '#0D324D', '#BFCDE0')
 names(dcols) = c('aseOutliers', 'sOutliers', 'eOutliers')
 abs_data = fread(paste0(data_dir, 'fig1E_input_data.txt'))
-abs_data$variable = factor(abs_data$variable, levels=c('eOutliers', 'aseOutliers', 'sOutliers'))
-fig_1E = ggplot(abs_data,aes(x=Feature,y=Proportion,Group=variable)) +
-  geom_bar(aes(fill=variable),stat='identity',color='black',position='dodge') +
+abs_data$Type = factor(abs_data$Type, levels=c('eOutliers', 'aseOutliers', 'sOutliers'))
+fig_1E = ggplot(abs_data,aes(x=Feature,y=Proportion,Group=Type)) +
+  geom_bar(aes(fill=Type),stat='identity',color='black',position='dodge') +
   scale_fill_manual(values=dcols) + theme_bw() + 
   xlab('') + ylab('Proportion of variants leading to outlier') + 
   gtex_v8_figure_theme() +
