@@ -4,7 +4,7 @@
 
 
 
-**Figure 2**
+## Figure 2
 * fig2a_input_data.txt
 	* Data frame containing riskratio of SNVs, indels, and SVs at varying distances upstream of outlier genes across data types
 	* Relevent column desciptors (base 1):
