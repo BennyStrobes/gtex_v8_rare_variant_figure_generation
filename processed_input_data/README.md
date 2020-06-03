@@ -3,7 +3,42 @@
 **Below you can find a short description of each input file that we have provided**
 
 
-
+## Figure 1
+* **fig1b_input_data.txt**
+	* Data frame containing counts across outliers and controls of rare variants nearby outlier genes at varying allele frequencies
+	* Relevent column desciptors (base 1):
+		* Column1: "Control_0": Count of control individuals with no rare variant nearby outlier genes
+		* Column2: "Control_1": Count of control individuals with a rare variant nearby outlier genes
+		* Column3: "Outlier_0": Count of outlier individuals with no rare variant nearby outlier genes
+		* Column4: "Outlier_1": Count of outlier individuals with rare variant nearby outlier genes
+		* Column5: "MAF": Allele frequency bin used to define the set of variants included (either novel, single, double, rare, or low frequency)
+		* Column6: "Method": Type of outlier (either eOutlier, sOutlier, or aseOutlier)
+		* Column7: "Type": Type of variant (either SNVs+indels or SVs)
+* **fig1c_input_data.txt**
+	* Data frame containing counts across outliers and controls of rare variants nearby outlier genes across variant categories
+	* Relevent column desciptors (base 1):
+		* Column1: "Control_0": Count of control individuals with no rare variant nearby outlier genes
+		* Column2: "Control_1": Count of control individuals with a rare variant nearby outlier genes
+		* Column3: "Outlier_0": Count of outlier individuals with no rare variant nearby outlier genes
+		* Column4: "Outlier_1": Count of outlier individuals with rare variant nearby outlier genes
+		* Column5: "Variant_category": Variant annotation category
+		* Column6: "Method": Type of outlier (either eOutlier, sOutlier, or aseOutlier)
+* **fig1d_input_data.txt**
+	* Data frame containing proportion of outliers in each bin with a nearby rare variant of the given category
+	* Relevent column descriptors (base 1):
+		* Column1: "Variant_category": Variant annotation category
+		* Column2: "pval_bin": Outlier bin based on outlier p-value
+		* Column3: "Proportion": Proportion of instances in the given bin with nearby rare variants of the given category
+		* Column4: "Type": Type of outlier (either eOutlier, sOutlier, or aseOutlier)
+* **fig1e_input_data.txt**
+	* Data frame containing proportion of rare variants of different annotations leading to outlier signal in nearby genes
+	* Relevent column descriptors (base 1)
+		* Column1: "Feature": Variant annotation category 
+		* Column2: "Type": Type of outlier (either eOutlier, sOutlier, or aseOutlier)
+		* Column3: "Proportion": Proportion of instances of rare variants in a given category leading to outlier signal in nearby genes
+* **variant_type_colors.rds**
+	* Character object including hex color codes, with names indicating the variant category that color is used for in the above plots
+		
 ## Figure 2
 * **fig2a_input_data.txt**
 	* Data frame containing riskratio of SNVs, indels, and SVs at varying distances upstream of outlier genes across data types
