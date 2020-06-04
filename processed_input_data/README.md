@@ -4,7 +4,7 @@
 
 
 ## Figure 1
-* **fig1B_input_data.txt**
+* **fig1b_input_data.txt**
 	* Data frame containing counts across outliers and controls of rare variants nearby outlier genes at varying allele frequencies
 	* Relevent column desciptors (base 1):
 		* Column1: "Control_0": Count of control individuals with no rare variant nearby outlier genes
@@ -14,7 +14,7 @@
 		* Column5: "MAF": Allele frequency bin used to define the set of variants included (either novel, single, double, rare, or low frequency)
 		* Column6: "Method": Type of outlier (either eOutlier, sOutlier, or aseOutlier)
 		* Column7: "Type": Type of variant (either SNVs+indels or SVs)
-* **fig1C_input_data.txt**
+* **fig1c_input_data.txt**
 	* Data frame containing counts across outliers and controls of rare variants nearby outlier genes across variant categories
 	* Relevent column desciptors (base 1):
 		* Column1: "Control_0": Count of control individuals with no rare variant nearby outlier genes
@@ -23,14 +23,14 @@
 		* Column4: "Outlier_1": Count of outlier individuals with rare variant nearby outlier genes
 		* Column5: "Variant_category": Variant annotation category
 		* Column6: "Method": Type of outlier (either eOutlier, sOutlier, or aseOutlier)
-* **fig1D_input_data.txt**
+* **fig1d_input_data.txt**
 	* Data frame containing proportion of outliers in each bin with a nearby rare variant of the given category
 	* Relevent column descriptors (base 1):
 		* Column1: "Variant_category": Variant annotation category
 		* Column2: "pval_bin": Outlier bin based on outlier p-value
 		* Column3: "Proportion": Proportion of instances in the given bin with nearby rare variants of the given category
 		* Column4: "Type": Type of outlier (either eOutlier, sOutlier, or aseOutlier)
-* **fig1E_input_data.txt**
+* **fig1e_input_data.txt**
 	* Data frame containing proportion of rare variants of different annotations leading to outlier signal in nearby genes
 	* Relevent column descriptors (base 1)
 		* Column1: "Feature": Variant annotation category 
@@ -74,7 +74,7 @@
 		* Column2: "type": the type of rare variant. Either "Purine to Pyrimidine" or "Pyrimidine to Purine"
 
 ## Figure 3
-* **fig3A_input_data.txt**
+* **fig3a_input_data.txt**
 	* Data frame containing the median proportion of single tissue outliers that replicate across all other tissues
 	* Relevent column desciptors (base 1):
 		* Column1: "tiss": Short tissue code (i.e. ADPSBQ)
@@ -83,7 +83,7 @@
 		* Column4: "max": Maximum proportion of outliers from given tissue that replicate in other tissues
 		* Column5: "type": Type of outlier (either eOutlier, sOutlier, or aseOutlier)
 		* Column6: "tissue_name": Long tissue name (i.e. Adipose - Subcutaneous)
-* **fig3B_input_data.txt**
+* **fig3b_input_data.txt**
 	* Data frame containing estimated relative risk of rare variants nearby single tissue outliers across tissues at varying outlier p-value thresholds
 	* Relevent column desciptors (base 1):
 		* Column1: "tissue": Tissue name
@@ -92,7 +92,7 @@
 		* Column4: "upper.q": Upper bound of 95% confidence interval around estimate
 		* Column10: "sig": Outlier p-value threshold
 		* Column11: "outlier_type": Type of outlier (either eOutlier, sOutlier, or aseOutlier)
-* **fig3C_input_data.txt**
+* **fig3c_input_data.txt**
 	* Data frame containing estimated relative risk of rare variants of varying annotation categories nearby single tissue outliers across tissues
 	* Relevent column desciptors (base 1):
 		* Column1: "tissue": Tissue name
@@ -101,13 +101,13 @@
 		* Column4: "upper.q": Upper bound of 95% confidence interval around estimate
 		* Column9: "Variant_type": Variant annotation
 		* Column11: "outlier_type": Type of outlier (either eOutlier, sOutlier, or aseOutlier)
-* **fig3D_input_data.txt**
+* **fig3d_input_data.txt**
 	* Data frame containing proportion of tissues supporting outlier calls underlying multi-tissue eOutliers and correlation outliers
 	* Relevent column descriptors (base 1)
 		* Column3: "Method": Outlier type (MEDZ or correlation) 
 		* Column4: "npass": Number of tissues with |Z| > 3 for that gene-individual outlier
 		* Column3: "prop": Proportion (range [0,1]) of measured tissue with outlier signal for that outlier
-* **fig3E_input_data.txt**
+* **fig3e_input_data.txt**
 	* Data frame containing relative risk estimates for rare variants occurring in tissue-specific enhancers nearby tissue-specific outliers
 	* Relevent column descriptors (base 1)
 		* Column1: "Riskratio": Relative risk estimate
@@ -151,13 +151,13 @@
 		* Column3: "method": The model used: either Watershed, RIVER, or GAM
 
 ## Figure 5
-* **fig5A_input_data.txt**
+* **fig5a_input_data.txt**
 	* File containing number of outliers per individual across different filters
 	* Relevent column descriptors (base 1)
 		* Column2: "Type": Type of outlier (either eOutlier, sOutlier, or aseOutlier)
 		* Column3: "variable": Filter applied (either Outliers, Outlier RV, Watershed > 0.5, Watershed > 0.9)
 		* Column4: "value": Count per individual
-* **fig5B_input_data.txt**
+* **fig5b_input_data.txt**
 	* Data frame containing variant effect size percentiles in UKBB traits across categories
 	* Relevent column descriptors (base 1)
 		* Column1: "VID": Variant chromosome and position (chr:pos)
@@ -165,34 +165,34 @@
 		* Column3: "Gene": Associated gene 
 		* Column4: "Trait": UKBB trait code
 		* Column5: "Category": Category of the given variant-gene (either Non-outlier, Outlier, or Coloc Outlier)
-* **fig5C_input_data.txt**
+* **fig5c_input_data.txt**
 	* Data frame containing the proportion of variants falling in the top 25th percentile in co-localized regions for relevant traits split by Watershed posterior
 	* Relevent column descriptors (base 1):
 		* Column1: "Posterior": Watershed posterior threshold
 		* Column2: "Category": Indicates whether the values are from a random permutation or actual
 		* Column3: "Prop": Proportion of variants in top 25th percentile at the given threshold
 		* Column4: "Model": either Watershed or CADD
-* **fig5D_pval_input_data.txt**
+* **fig5d_pval_input_data.txt**
 	* File containing GWAS p-values for all variants in a given co-localized region for Asthma
 	* Relevent column descriptors (base 1):
 		* Column1: "Chr": Chromosome
 		* Column2: "Pos": Position
 		* Column3: "pval": GWAS association p-value
 		* Column5: "IsVar": Indicates whether the variant is the outlier-associated variant with a high Watershed score, lead co-localized SNP or other
-* **fig5D_betas_input_data.txt**
+* **fig5d_betas_input_data.txt**
 	* File containing GWAS effect sizes for all variants in a given co-localized region for Asthma
 	* Relevent column descriptors (base 1):
 		* Column2: "minor_AF": Variant allele frequency in UKBB
 		* Column9: "VOI": Indicates whether variant is high-scoring Watershed variant, lead co-localized SNP or other
 		* Column10: "beta_scaled": GWAS effect size scaled by case-control ratio
-* **fig5E_pval_input_data.txt**
+* **fig5e_pval_input_data.txt**
 	* File containing GWAS p-values for all variants in a given co-localized region for High cholesterol
 	* Relevent column descriptors (base 1):
 		* Column1: "Chr": Chromosome
 		* Column2: "Pos": Position
 		* Column3: "pval": GWAS association p-value
 		* Column5: "IsVar": Indicates whether the variant is the outlier-associated variant with a high Watershed score
-* **fig5E_betas_input_data.txt**
+* **fig5e_betas_input_data.txt**
 	* File containing GWAS effect sizes for all variants in a given co-localized region for Asthma
 	* Relevent column descriptors (base 1):
 		* Column2: "minor_AF": Variant allele frequency in UKBB
@@ -200,17 +200,17 @@
 		* Column10: "beta_scaled": GWAS effect size scaled by case-control ratio
 
 ## Figure S1
-* **figS1A_input_data.txt**
+* **figS1a_input_data.txt**
 	* Data frame containing number of outliers identified per individual
 	* Relevent column descriptors (base 1):
 		* Column2: "Type": Type of outlier (either eOutlier, sOutlier, or aseOutlier)
 		* Column3: "N": Number of outliers
 		* Column4: "POP": Self-reported population for the individual (either African-American, European-American, Asian-American or Other/Unknown)
-* **figS1B_input_data.txt**
+* **figS1b_input_data.txt**
 	* Data frame containing median Z-scores of eOutlier individuals
 	* Relevent column descriptors (base 1):
 		* Column3: "MedZ": Median Z-score for the gene-individual
-* **figS1C_input_data.txt**
+* **figS1c_input_data.txt**
 	* Data frame containing relative risk estimates nearby eOutliers across different correction procedures
 	* Relevent column descriptors (base 1):
 		* Column1: "Riskratio": Relative risk estimate
@@ -218,7 +218,7 @@
 		* Column3: "Upper": Upper bound of 95% confidence interval around risk estimate
 		* Column5: "Type": Variant type (SNVs+indels or SVs)
 		* Column6: "Category": Description of correction procedure
-* **figS1D_input_data.txt**
+* **figS1d_input_data.txt**
 	* Data frame containing relative risk estimates nearby outliers across thresholds
 	* Relevent column descriptors (base 1):
 		* Column1: "Riskratio": Relative risk estimate
@@ -229,22 +229,22 @@
 		* Column8: "Threshold": Outlier p-value threshold
 
 ## Figure S2
-* **dots_per_indv_per_tiss_v8_Vg.rds**
+* **figS2a_dots_input_data.rds**
 	* Object containing a list of length 49, with each item containing a data frame with number of tests per individual
 	* Relevent column descriptors (base 1):
 		* Column2: "count": Count of number of tests for the given individual
-* **genes_w_Vg_per_tiss.rds**
+* **figS2a_genes_input_data.rds**
 	* Object containing a data frame with number of genes with Vg estimates per tissue
 	* Relevent column descriptors (base 1):
 		* Column1: "TissueID"
 		* Column2: "genes_w_Vg_per_tissue": Number of genes with Vg estimates per tissue
-* **outlier_times_v8_Vg.tsv**
+* **figS2b_input_data.txt**
 	* Data frame containing the number of times each gene was tested for aseOutliers and the number of times it was significant
 	* Relevent column descriptors (base 1):
 		* Column1: "GeneID"
 		* Column2: "times.gene.tested"
 		* Column3: "times.gene.significant"
-* **tests_per_indv_faceted_plt_v8_Vg.rds**
+* **figS2c_input_data.rds**
 	* Object containing a data frame with the number of tests done per individual for aseOutliers
 	* Relevent column descriptors (base 1):
 		* Column1: "filter": Coding genes or Highly expressed coding genes
@@ -252,17 +252,17 @@
 		* Column4: "total": Number of tests
 		
 ## Figure S3
-* **figS3A_input_data.txt**
+* **figS3a_input_data.txt**
 	* Data frame containing Vg estimates in GTEx v7 and v8
 	* Relevent column descriptors (base 1):
 		* Column2: "vgs_v7"
 		* Column3: "vgs_v8"
-* **figS3B_input_data.txt**
+* **figS3b_input_data.txt**
 	* Data frame containing spearman correlations of Vg estimates between v7 and v8 across tissues
 	* Relevent column descriptors (base 1):
 		* Column1: "tissue"
 		* Column2: "spearman_correlation"
-* **figS3C_input_data.txt**
+* **figS3c_input_data.txt**
 	* Data frame containing number of genes with Vg estimates in GTEx v7 and v8 across tissues
 	* Relevent column descriptors (base 1):
 		* Column1: "tissue"
@@ -299,14 +299,14 @@
 		* Column5: "fraction": Maximum fraction of reads mapping to a single exon-exon junction in the LeafCutter cluster
 
 ## Figure S7
-* **figS7A_input_data.txt**
+* **figS7a_input_data.txt**
 	* Data frame containing continuous associations between outlier statistics and rare variant status across outlier types
 	* Relevent column descriptors (base 1):
 		* Column1: "Beta": Coefficient estimate from a linear model of binary rare variant status as the outcome and continuous outlier measure, defined as the -log10(median p-value), as the predictor
 		* Column2: "SE": Standard error of beta estimate
 		* Column5: "Category": Type of outlier (eOutlier, aseOutlier, or sOutlier)
 		* Column6: "Variant": Type of variant (SNVs+indels or SVs)
-* **figS7B_input_data.txt**
+* **figS7b_input_data.txt**
 	* Data frame containing continuous associations between outlier statistics and rare variant status across outlier types split by variant annotation
 	* Relevent column descriptors (base 1):
 		* Column1: "Beta": Coefficient estimate from a linear model of binary rare variant status as the outcome and continuous outlier measure, defined as the -log10(median p-value), as the predictor
@@ -317,14 +317,14 @@
 	* Character object including hex color codes, with names indicating the variant category that color is used for in the above plots
 
 ## Figure S8
-* **figS8AB_input_data.txt**
+* **figS8ab_input_data.txt**
 	* Data frame containing the number and proportion of tissues with outlier signal underlying each multi-tissue outlier call
 	* Relevent column descriptors (base 1):
 		* Column3: "NT": Number of tested tissues for the given gene-individual
 		* Column4: "NO": Number of tested tissues with outlier signal
 		* Column5: "Category": Type of outlier (either eOutlier, aseOutlier, or sOutlier)
 		* Column6: "Prop": Proportion of tissues with outlier signal
-* **figS8C_input_data.txt**
+* **figS8c_input_data.txt**
 	* Data frame containing relative risk of nearby rare variant estimates across outliers across varying number of tissues supporting the multi-tissue outlier call
 	* Relevent column descriptors (base 1):
 		* Column1: "Riskratio": Relative risk estimate
@@ -335,23 +335,23 @@
 		* Column7: "Category": Type of outlier (either eOutlier, aseOutlier, or sOutlier)
 
 ## Figure S9
-* **figS9A_input_data.txt**
+* **figS9a_input_data.txt**
 	* Data frame containing outlier replication across outlier types
 	* Relevent column descriptors (base 1):
 		* Column2: "value": Replication rate
 		* Column3: "Discovery": Outlier type in discovery (either eOutlier, aseOutlier, or sOutlier)
 		* Column4: "Test": Outlier type in replication (either eOutlier, aseOutlier, or sOutlier)
-* **figS9B_input_data.txt**
+* **figS9b_input_data.txt**
 	* Data frame containing number of outliers identified as eOutliers, aseOutliers and sOutliers with nearby rare variants of different annotations
 	* Relevent column descriptors (base 1):
 		* Column1: "Var1": Variant annotation
 		* Column2: "Freq": Number of outliers found in all three approaches with nearby rare variant
-* **figS9C_input_data.txt**
+* **figS9c_input_data.txt**
 	* Data frame containing median Z-scores for outliers either called as eOutliers, aseOutliers, both or neither
 	* Relevent column descriptors (base 1):
 		* Column3: "MedZ": Median Z-score
 		* Column7: "Cat": Indicates whether this is an eOutlier, aseOutlier, shared outlier or non-outlier
-* **figS9D_input_data.txt**
+* **figS9d_input_data.txt**
 	* Data frame containing proportion of aseOutliers with nearby rare variants across categories split by the corresponding total expression effect
 	* Relevent column descriptors (base 1):
 		* Column1: "medz_bin": Bin of the median Z-score for each aseOutlier
@@ -359,13 +359,13 @@
 		* Column3: "variant_cat": Variant annotation
 		
 ## Figure S10
-* **figS10A_input_data.txt**
+* **figS10a_input_data.txt**
 	* Data frame containing GO term enrichments of genes with no outlier individuals
 	* Relevent column descriptors (base 1):
 		* Column1: "GO_term"
 		* Column8: "FDR": FDR-corrected enrichment p-value
 		* Column9: "Significant": Indicates whether the given term is significantly enriched
-* **figS10B_input_data.txt**
+* **figS10b_input_data.txt**
 	* Data frame containing GO term enrichments of genes with extreme outlier individuals
 	* Relevent column descriptors (base 1):
 		* Column1: "GO_term"
@@ -374,13 +374,13 @@
 		* Column9: "Significant": Indicates whether the given term is significantly enriched
 		
 ## Figure S11
-* **figS11A_input_data.txt**
+* **figS11a_input_data.txt**
 	* Data frame containing fold-change differences in enrichments across variant types between outlier types
 	* Relevent column descriptors (base 1):
 		* Column1: "FC": Enrichment fold-change relative to outlier type with the highest enrichment
 		* Column2: "Type": Outlier type (either eOutlier, aseOutlier or sOutlier)
 		* Column3: "Cat": Variant annotation category
-* **figS11B_input_data.txt**
+* **figS11b_input_data.txt**
 	* Data frame containing proportion of rare variants leading to nearby outlier signal
 	* Relevent column descriptors (base 1):
 		* Column1: "Feature": Variant annotation 
@@ -392,7 +392,7 @@
 	* Character object including hex color codes, with names indicating the variant category that color is used for in the above plots
 
 ## Figure S12
-* **figS12A_input_data.txt**
+* **figS12a_input_data.txt**
 	* Data frame containing relative risk estimates for rare variants at varying distances downstream from end of outlier genes
 	* Relevent column descriptors (base 1):
 		* Column1: "Riskratio": Relative risk estimate
@@ -401,7 +401,7 @@
 		* Column6: "Method": Outlier type (either eOutlier, aseOutlier or sOutlier)
 		* Column7: "Type": Variant type (SNVs+indels or SVs)
 		* Column9: "Window": Window downstream from end of outlier gene
-* **figS12B_input_data.txt**
+* **figS12b_input_data.txt**
 	* Data frame containing relative risk estimates for rare variants overlapping promoter motifs nearby eOutliers
 	* Relevent column descriptors (base 1):
 		* Column1: "promoter_motif" 
@@ -410,28 +410,28 @@
 		* Column9: "NumCat": Count of number of outliers with rare variant intersecting given motif
 
 ## Figure S13
-* **figS13A_input_data.txt**
+* **figS13a_input_data.txt**
 	* Data frame containing observed and expected number of genes occurring together as outliers in a given window
 	* Relevent column descriptors (base 1):
 		* Column1: "Window": Window size (log(bp))
 		* Column2: "Type": Type of outlier (eOutlier, aseOutlier or sOutlier)
 		* Column3: "variable": Observed or expected
 		* Column4: "value": Number of pairs in that bin
-* **figS13B_input_data.txt**
+* **figS13b_input_data.txt**
 	* Data frame containing enrichment of pairs within given windows over the expected number
 	* Relevent column descriptors (base 1):
 		* Column1: "Enrichment"
 		* Column2: "Type": Type of outlier (eOutlier, aseOutlier or sOutlier)
 		* Column3: "Window": Window size (log(bp))
 		* Column4: "LogRatio": Log of the ratio of observed to expected
-* **figS13C_input_data.txt**
+* **figS13c_input_data.txt**
 	* Data frame containing enrichment of pairs within given windows over the expected number for sOutliers, filtering out any splicing gene pairs that share a cluster
 	* Relevent column descriptors (base 1):
 		* Column1: "Enrichment"
 		* Column2: "Type": Type of outlier (eOutlier, aseOutlier or sOutlier)
 		* Column3: "Window": Window size (log(bp))
 		* Column4: "LogRatio": Log of the ratio of observed to expected
-* **figS13D_input_data.txt**
+* **figS13d_input_data.txt**
 	* Data frame containing relative risk estimates of nearby rare variants to eOutlier pairs
 	* Relevent column descriptors (base 1):
 		* Column3: "Riskratio": Relative risk estimate
@@ -440,7 +440,7 @@
 		* Column7: "Cat": Variant annotation category
 		
 ## Figure S14
-* **figS14A_input_data.txt**
+* **figS14a_input_data.txt**
 	* Data frame containing counts of rare SVs nearby outlier genes
 	* Relevent column descriptors (base 1):
 		* Column1: "Control_0": Number of controls with no nearby rare SV
@@ -449,19 +449,19 @@
 		* Column4: "Outlier_1": Number of eOutliers with a nearby rare SV
 		* Column5: "Z": Z-score threshold for eOutliers
 		* Column6: "Category": Coding or non-coding
-* **figS14B_input_data.txt**
+* **figS14b_input_data.txt**
 	* Data frame containing number of outlier-associated rare SVs per individual
 	* Relevent column descriptors (base 1):
 		* Column2: "Direction": Indicates over or under eOutlier
 		* Column3: "NumSV": Number of SVs for the given individual in that row
-* **figS14C_input_data.txt**
+* **figS14c_input_data.txt**
 	* Data frame containing enrichment of pairs within given windows over the expected number for sOutliers, filtering out any splicing gene pairs that share a cluster
 	* Relevent column descriptors (base 1):
 		* Column1: "Enrichment"
 		* Column2: "Type": Type of outlier (eOutlier, aseOutlier or sOutlier)
 		* Column3: "Window": Window size (log(bp))
 		* Column4: "LogRatio": Log of the ratio of observed to expected
-* **figS14D_input_data.txt**
+* **figS14d_input_data.txt**
 	* Data frame containing Z-scores for pairs of genes impacted by the same rare SV
 	* Relevent column descriptors (base 1):
 		* Column1: "MedZ.x": Median Z-score of gene 1
@@ -469,7 +469,7 @@
 		* Column3: "variant_cat.x": Variant annotation category
 
 ## Figure S16
-* **figS16A_input_data.txt**
+* **figS16a_input_data.txt**
 	* Data frame containing Z-scores across tissues for individual with fusion transcript
 	* Relevent column descriptors (base 1):
 		* Column2: "Category": Gene name (either SPTBN1 or EML6)
@@ -525,11 +525,11 @@
 		* Column5: "major_allele": Nucleotide of common allele
 
 ## Figure S21
-* **heatmaps/ASE_sharing_heatmap_only_available_v8_Vg_no_go_indv_gene.tsv**, **heatmaps/TE_sharing_heatmap_only_available.tsv**, **heatmaps/AS_sharing_heatmap_only_available.tsv**
+* **figS21_ASE_sharing_heatmap_input_data.txt**, **figS21_TE_sharing_heatmap_input_data.txt**, **figS21_AS_sharing_heatmap_input_data.txt**
 	* All three files are formatted as square matrices of tissue x tissue indicating the proportion of outliers discovered in one tissue that replicate in the corresponding tissue, limiting to genes tested in both tissues.
-* **heatmaps/ASE_sharing_heatmap_include_NA_v8_Vg_no_go_indv_gene.tsv**, **heatmaps/TE_sharing_heatmap_include_NA.tsv**, **heatmaps/AS_sharing_heatmap_include_NA.tsv**
+* **figS21_ASE_NA_sharing_heatmaap_input_data.txt**, **figS21_TE_NA_sharing_heatmap_input_data.txt**, **figS21_AS_NA_sharing_heatmap_input_data.txt**
 	* All three files are formatted as square matrices of tissue x tissue indicating the proportion of outliers discovered in one tissue that replicate in the corresponding tissue, considering a missing gene in one tissue as a non-sharing event.
-* **heatmaps/ASE_sharing_heatmap_BH_v8_Vg.tsv*
+* **figS21c_ASE_BH_input_data.txt*
 	* Formatted as square matrices of tissue x tissue indicating the proportion of aseOutliers discovered in one tissue that replicate in the corresponding tissue when using a Benjamini-Hochberg corrected p-value threshold of 0.05.
 
 ## Figure S22
@@ -542,7 +542,7 @@
 		* Column4: "value": Proportion of outliers that replicate in the given tissue
 
 ## Figure S23
-* **single_tissue_variant_enrichment_v8_Vg.tsv**
+* **figS23a_input_data.txt**
 	* Data frame containing relative risk estimates of nearby rare SNVs for outliers across all tissues defined using FDR-corrected p-values
 	* Relevent column descriptors (base 1)
 		* Column1: "tissue"
@@ -551,7 +551,7 @@
 		* Column4: "upper.q": Upper bound of 95% confidence interval around risk estimate
 		* Column9: "sig": FDR-corrected p-value threshold
 		* Column11: "outlier_type": Type of outlier
-* **single_tissue_NMD_variant_enrichment_v8_Vg.tsv**
+* **figS23b_input_data.txt**
 	* Data frame containing relative risk estimates of nearby rare variants of varying annotations for outliers across all tissues using an FDR-corrected p-value of 0.05
 	* Relevent column descriptors (base 1)
 		* Column1: "tissue"
@@ -597,17 +597,17 @@
 		* Column8: "Tissue"
 		
 ## Figure S26
-* **figS26A_input_data.txt**
+* **figS26a_input_data.txt**
 	* Data frame containing imputation error for expression imputation across several imputation methods
 	* Relevent column descriptors (base 1):
 		* Column3: "Error": Reconstruction error after imputing known values
 		* Column4: "MethodName": Imputation method (either EM, KNN, MEAN, PMD, RANDOM, SOFT)
-* **figS26B_input_data.txt**
+* **figS26b_input_data.txt**
 	* Data frame containing imputation error for KNN-imputed expression data across varying values for k
 	* Relevent column descriptors (base 1):
 		* Column3: "Parameter": Value of k
 		* Column4: "Error": Reconstruction error after imputing known values
-* **figS26C_input_data.txt**
+* **figS26c_input_data.txt**
 	* Data frame containing relative risk of nearby rare variant estimates for correlation outliers across thresholds both with and without first imputing missing data
 	* Relevent column descriptors (base 1):
 		* Column1: "Riskratio": Relative risk estimate
@@ -736,7 +736,7 @@
 		* Column18: "WS_Bin": Variant bin based on Watershed score (High or Low)
 		
 ## Figure S39
-* **all_variants_aFC_watershed_pretty.csv**
+* **figS39_input_data.txt**
 	* Data frame containing CRISPR editing results
 	* Relevent column descriptors (base 1):
 		* Column3: "mean_aFC": mean allelic fold-change
@@ -744,22 +744,22 @@
 		* Column11: "ase_watershed_posterior"
 		
 ## Figure S40
-* **figS40AB_input_data.txt**
+* **figS40ab_input_data.txt**
 	* Data frame containing distribution of Watershed and CADD scores across GTEx rare variants found in UKBB
 	* Relevent column descriptors (base 1):
 		* Column3: "MaxWS": Maximum watershed score for the given variant across all individuals and outlier types
 		* Column4: "RawScore": Variant CADD score
-* **figS40C_input_data.txt**
+* **figS40c_input_data.txt**
 	* Data frame containing distribution of Watershed and CADD scores across GTEx rare variants found in UKBB with both scores available
 	* Relevent column descriptors (base 1):
 		* Column3: "RawScore": Variant CADD score
 		* Column4: "ws_posterior": Maximum watershed score for the given variant across all individuals and outlier types
-* **figS40D_input_data.txt**
+* **figS40d_input_data.txt**
 	* Data frame containing the proportion of variants of different types that have high Watershed scores over those with high CADD scores
 	* Relevent column descriptors (base 1):
 		* Column1: "Name": Variant annotation
 		* Column2: "FC": Fold-change in proportion of variants with high Watershed / high CADD scores
-* **figS40E_input_data.txt**
+* **figS40e_input_data.txt**
 	* Data frame containing the proportion of variants falling in the top 25th percentile in co-localized regions for relevant traits split by using a Watershed posterior threshold and selecting the top N CADD variants to match
 	* Relevent column descriptors (base 1):
 		* Column1: "Posterior": Watershed posterior threshold
