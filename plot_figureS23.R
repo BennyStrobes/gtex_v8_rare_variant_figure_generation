@@ -32,7 +32,7 @@ gtex_v8_figure_theme <- function() {
 }
 
 #### Panel A: Enrichment of rare variants in single tissue outlirs 
-results <- read_tsv("processed_input_data/figureS23/single_tissue_variant_enrichment_v8_Vg.tsv")
+results <- read_tsv("processed_input_data/figureS23/figS23a_input_data.txt")
 outlier_threshold <- c(0.05, 1e-2, 1e-3, 1e-4, 1e-5, 1e-6, 1e-7, 1e-8, 1e-9)
 results$sig <- factor(results$sig, levels = outlier_threshold)
 
@@ -50,7 +50,7 @@ panel_a <-
 
 
 #### Panel B: Enrichment of rare variants with NMD annotations in single tissue outliers ####
-dat <- read_tsv("processed_input_data/figureS23/single_tissue_NMD_variant_enrichment_v8_Vg.tsv", comment = "#")
+dat <- read_tsv("processed_input_data/figureS23/figS23b_input_data.txt", comment = "#")
 
 dat <- 
   dat %>%
