@@ -39,6 +39,39 @@ The following scripts were generated using **Dependencies and Testing Environmen
 
 ## Dependencies and Testing Environment 2
 
+* R 3.6.0
+* R package ggplot2 (3.3.1)
+* R package cowplot (1.0.0)
+* R package dplyr (1.0.0)
+* R package data.table (1.12.8)
+* R package epitools (0.5-10.1)
+* R package ggpubr (0.3.0)
+* R package viridis (0.5.1)
+* R package ggridges (0.5.2)
+
+The following scripts were generated using **Dependencies and Testing Environment 1**:
+* plot_figure1.R
+* plot_figure3.R
+* plot_figure5.R
+* plot_figureS1.R
+* plot_figureS3.R
+* plot_figureS7.R
+* plot_figureS8.R
+* plot_figureS9.R
+* plot_figureS10.R
+* plot_figureS11.R
+* plot_figureS12.R
+* plot_figureS13.R
+* plot_figureS14.R
+* plot_figureS16.R
+* plot_figureS22.R
+* plot_figureS23.R
+* plot_figureS25.R
+* plot_figureS26.R
+* plot_figureS38.R
+* plot_figureS40.R
+* plot_figureS41.R
+* plot_figureS42.R
 
 ## Authors
 
