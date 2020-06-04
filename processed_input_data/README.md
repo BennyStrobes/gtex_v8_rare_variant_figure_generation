@@ -455,13 +455,6 @@
 		* Column2: "Direction": Indicates over or under eOutlier
 		* Column3: "NumSV": Number of SVs for the given individual in that row
 * **figS14c_input_data.txt**
-	* Data frame containing enrichment of pairs within given windows over the expected number for sOutliers, filtering out any splicing gene pairs that share a cluster
-	* Relevent column descriptors (base 1):
-		* Column1: "Enrichment"
-		* Column2: "Type": Type of outlier (eOutlier, aseOutlier or sOutlier)
-		* Column3: "Window": Window size (log(bp))
-		* Column4: "LogRatio": Log of the ratio of observed to expected
-* **figS14d_input_data.txt**
 	* Data frame containing Z-scores for pairs of genes impacted by the same rare SV
 	* Relevent column descriptors (base 1):
 		* Column1: "MedZ.x": Median Z-score of gene 1
