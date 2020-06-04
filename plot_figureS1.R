@@ -1,7 +1,6 @@
 library(ggplot2)
 library(data.table)
 library(dplyr)
-library(RColorBrewer)
 library(cowplot)
 library(viridis)
 
@@ -14,14 +13,14 @@ gtex_v8_figure_theme <- function() {
                legend.text = element_text(size=7), legend.title = element_text(size=8)))
 }
 
-data_dir = '~/gtex_v8_rare_variant_figure_generation/processed_input_data/figureS1/'
-out_dir = '~/gtex_v8_rare_variant_figure_generation/generated_figures/'
+data_dir = 'processed_input_data/figureS1/'
+out_dir = 'generated_figures/'
 
 dcols = c('#7F5A83', '#BFCDE0', '#0D324D')
 names(dcols) = c('aseOutliers', 'eOutliers', 'sOutliers')
 
 ### panel A - number of outliers per person split by self-reported population group ###
-outlier_summary = fread(paste0(data_dir, 'figS1A_input_data.txt'))
+outlier_summary = fread(paste0(data_dir, 'figS1a_input_data.txt'))
 outlier_summary$POP = factor(outlier_summary$POP, levels=c('African-American (n=78)', 'European-American (n=668)', 'Asian-American (n=10)', 'Other/Unknown (n=8)'))
 outlier_summary$Type = factor(outlier_summary$Type, levels=c('eOutliers', 'aseOutliers', 'sOutliers'))
 sfig_1A = ggplot(outlier_summary, aes(x=POP,y=N,Group=Type)) + geom_boxplot(aes(fill=Type)) +
@@ -33,14 +32,14 @@ sfig_1A = ggplot(outlier_summary, aes(x=POP,y=N,Group=Type)) + geom_boxplot(aes(
         legend.key.height = unit(0.05, "cm")) 
 
 ### panel B - number of eOutliers at a median Z-score threshold of 3 by over/under ###
-medz_outliers = fread(paste0(data_dir, 'figS1B_input_data.txt'))
+medz_outliers = fread(paste0(data_dir, 'figS1b_input_data.txt'))
 sfig_1B = ggplot(medz_outliers, aes(MedZ)) + geom_histogram(bins=40) + gtex_v8_figure_theme() +
   xlab('Median Z-score') + ylab('Number of eOutliers') +
   annotate("text", x=7, y=500, label='n=2215',cex=3) +
   annotate("text", x=-7, y=500, label='n=1509',cex=3)
 
 ### panel C - effect of expression data correction on rare variant enrichments ###
-risk_estims = fread(paste0(data_dir, 'figS1C_input_data.txt'))
+risk_estims = fread(paste0(data_dir, 'figS1c_input_data.txt'))
 risk_estims = risk_estims %>% arrange(by=Riskratio)
 risk_estims$Category = factor(risk_estims$Category, levels=unique(risk_estims$Category))
 sfig_1C = ggplot(risk_estims, aes(x=Category, y=Riskratio)) + 
@@ -57,7 +56,7 @@ sfig_1C = ggplot(risk_estims, aes(x=Category, y=Riskratio)) +
 
 
 ## SFig 1D - enrichments across thresholds
-threshold_data = fread(paste0(data_dir, 'figS1D_input_data.txt'))
+threshold_data = fread(paste0(data_dir, 'figS1d_input_data.txt'))
 threshold_data$Threshold = factor(threshold_data$Threshold, levels=c(0.01,0.001,1e-04,1e-05,1e-06,1e-07,1e-08))
 threshold_data$Maf = factor(threshold_data$Maf, levels=c('novel', 'rare', 'low frequency'))
 threshold_data$Method = factor(threshold_data$Method, levels=c('eOutliers', 'aseOutliers', 'sOutliers'))

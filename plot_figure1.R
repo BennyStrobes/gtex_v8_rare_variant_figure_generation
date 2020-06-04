@@ -16,11 +16,11 @@ gtex_v8_figure_theme <- function() {
 
 
 
-data_dir = '~/gtex_v8_rare_variant_figure_generation/processed_input_data/figure1/'
-out_dir = '~/gtex_v8_rare_variant_figure_generation/generated_figures/'
+data_dir = 'processed_input_data/figure1/'
+out_dir = 'generated_figures/'
 
 ### panel B - relative risk of rare variant nearby outliers at varying allele frequencies ###
-counts = fread(paste0(data_dir, 'fig1B_input_data.txt'))
+counts = fread(paste0(data_dir, 'fig1b_input_data.txt'))
 risks = do.call(rbind, lapply(1:nrow(counts), function(x) 
   epitab(rbind(c(counts$Control_0[x], counts$Control_1[x]), c(counts$Outlier_0[x], counts$Outlier_1[x])),method="riskratio")$tab[2,]))
 risks = cbind(counts, risks[,5:8])
@@ -42,7 +42,7 @@ fig_1B = ggplot(risks, aes(x=MAF,y=riskratio,Group=Method)) +
 
 ### panel C - relative risk of rare variant nearby outliers across varying variant annotations ###
 plot_cols = readRDS(paste0(data_dir, 'variant_type_colors.rds'))
-type_counts = fread(paste0(data_dir, 'fig1C_input_data.txt'))
+type_counts = fread(paste0(data_dir, 'fig1c_input_data.txt'))
 type_risks = do.call(rbind, lapply(1:nrow(type_counts), function(x) 
   epitab(rbind(c(type_counts$Control_0[x], type_counts$Control_1[x]), c(type_counts$Outlier_0[x], type_counts$Outlier_1[x])),method="riskratio")$tab[2,]))
 type_risks = cbind(type_counts, type_risks[,5:8])
@@ -81,7 +81,7 @@ fig_1C = fig_1Ca + annotation_custom(ggplotGrob(fig_1Cb), xmin = 0.1, xmax = 12,
 
 
 ### panel D - proportion of outliers at varying thresholds with nearby rare variant across variant annotations ###
-variant_props = fread(paste0(data_dir, 'fig1D_input_data.txt'))
+variant_props = fread(paste0(data_dir, 'fig1d_input_data.txt'))
 variant_props$Variant_category = factor(variant_props$Variant_category, levels=c('no_variant','other_noncoding','coding', 'conserved_noncoding', 'TSS', 'stop', 'frameshift', 'splice_region_variant', 'splice_donor_variant', 'splice_acceptor_variant', 'TE', 'INV','BND','DEL','CNV','DUP'))
 variant_props$pval_bin = factor(variant_props$pval_bin, levels=c('0~1e-07', '1e-07~1e-05', '1e-05~1e-04', '1e-04~1e-03', '1e-03~1e-02', '1e-02~5e-02', 'nonOutlier'))
 variant_props$Type = factor(variant_props$Type, levels=c('eOutliers - Over', 'eOutliers - Under', 'aseOutliers', 'sOutliers'))
@@ -105,7 +105,7 @@ fig_1D = ggplot(variant_props, aes(x=pval_bin,y=Proportion,Group=Variant_categor
 ### panel E - proportion of rare variants of different annotations within 10kb of gene associated with outlier signal ###
 dcols = c('#7F5A83', '#0D324D', '#BFCDE0')
 names(dcols) = c('aseOutliers', 'sOutliers', 'eOutliers')
-abs_data = fread(paste0(data_dir, 'fig1E_input_data.txt'))
+abs_data = fread(paste0(data_dir, 'fig1e_input_data.txt'))
 abs_data$Type = factor(abs_data$Type, levels=c('eOutliers', 'aseOutliers', 'sOutliers'))
 fig_1E = ggplot(abs_data,aes(x=Feature,y=Proportion,Group=Type)) +
   geom_bar(aes(fill=Type),stat='identity',color='black',position='dodge') +
@@ -122,8 +122,4 @@ first_col <- plot_grid(NULL, fig_1C, fig_1E, labels = c('A','C', 'E'), nrow=3, a
 second_col <- plot_grid(fig_1B, fig_1D, labels=c('B', 'D'), nrow=2, align='hv', rel_heights=c(1,2))
 fig_1 = plot_grid(first_col, second_col, ncol = 2, align='v')
 ggsave(fig_1, file=paste0(out_dir, 'fig1.pdf'), width=7.2, height=11, units="in")
-
-
-
-
 

@@ -14,8 +14,8 @@ gtex_v8_figure_theme <- function() {
 }
 
 
-data_dir = '~/gtex_v8_rare_variant_figure_generation/processed_input_data/figureS41/'
-out_dir = '~/gtex_v8_rare_variant_figure_generation/generated_figures/'
+data_dir = 'processed_input_data/figureS41/'
+out_dir = 'generated_figures/'
 
 ### summary stats across 4 cholesterol related traits in MVP ###
 chol_stats = fread(paste0(data_dir, 'figS41_input_data.txt'))

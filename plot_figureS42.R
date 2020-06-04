@@ -12,9 +12,8 @@ gtex_v8_figure_theme <- function() {
                legend.text = element_text(size=7), legend.title = element_text(size=8)))
 }
 
-
-data_dir = '~/gtex_v8_rare_variant_figure_generation/processed_input_data/figureS42/'
-out_dir = '~/gtex_v8_rare_variant_figure_generation/generated_figures/'
+data_dir = 'processed_input_data/figureS42/'
+out_dir = 'generated_figures/'
 
 ### summary stats across 4 cholesterol related traits in JHS ###
 jhs_stats = fread(paste0(data_dir, 'figS42_input_data.txt'))

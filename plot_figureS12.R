@@ -13,8 +13,8 @@ gtex_v8_figure_theme <- function() {
                legend.text = element_text(size=7), legend.title = element_text(size=8)))
 }
 
-data_dir = '~/gtex_v8_rare_variant_figure_generation/processed_input_data/figureS12/'
-out_dir = '~/gtex_v8_rare_variant_figure_generation/generated_figures/'
+data_dir = 'processed_input_data/figureS12/'
+out_dir = 'generated_figures/'
 
 dcols = c('#7F5A83', '#BFCDE0', '#0D324D')
 names(dcols) = c('aseOutliers', 'eOutliers', 'sOutliers')
@@ -33,7 +33,7 @@ calc_motif_enrich <- function(motif, data, direction) {
 }
 
 ### panel A - plot rare variant enrichments at varying windows downstream from gene ###
-window_data = fread(paste0(data_dir, 'figS12A_input_data.txt'))
+window_data = fread(paste0(data_dir, 'figS12a_input_data.txt'))
 window_data$Method = factor(window_data$Method, levels=c('eOutliers', 'aseOutliers', 'sOutliers'))
 window_data$Type = factor(window_data$Type, levels=c('SNVs', 'indels', 'SVs'))
 sf1 = ggplot(window_data, aes(x=Window, y=Riskratio,Group=Method)) + 
@@ -50,7 +50,7 @@ sf1 = ggplot(window_data, aes(x=Window, y=Riskratio,Group=Method)) +
   facet_wrap(Type~.,scales='free', ncol=3) + theme(strip.background = element_blank())
 
 ### panel B - enrichment of rare variants in promoter motifs nearby outliers ###
-tss_data = fread(paste0(data_dir, 'figS12B_input_data.txt')) %>% filter(promoter_motif != 'no_motif')
+tss_data = fread(paste0(data_dir, 'figS12b_input_data.txt')) %>% filter(promoter_motif != 'no_motif')
 enrich_over = do.call(rbind, lapply(unique(tss_data$promoter_motif), function(x) calc_motif_enrich(x, tss_data, 'Over')))
 enrich_under = do.call(rbind, lapply(unique(tss_data$promoter_motif), function(x) calc_motif_enrich(x, tss_data, 'Under')))
 both_enrich = rbind(enrich_over, enrich_under) %>% group_by(Motif) %>%
@@ -67,5 +67,5 @@ sf2 = ggplot(both_enrich, aes(x=Motif, y=Risk, Group=Direction)) +
   
 ### combine
 sfig <- plot_grid(sf1, sf2, labels = c('A', 'B'), nrow=2, align='hv', axis='tlbr')
-ggsave(sfig, file=paste0(out_dir, 'figS12.png'), width=7.2, height=8, units="in")
+ggsave(sfig, file=paste0(out_dir, 'figS12.pdf'), width=7.2, height=7, units="in")
 

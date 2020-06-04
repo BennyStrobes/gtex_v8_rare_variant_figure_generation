@@ -12,8 +12,8 @@ gtex_v8_figure_theme <- function() {
                legend.text = element_text(size=7), legend.title = element_text(size=8)))
 }
 
-data_dir = '~/gtex_v8_rare_variant_figure_generation/processed_input_data/figureS38/'
-out_dir = '~/gtex_v8_rare_variant_figure_generation/generated_figures/'
+data_dir = 'processed_input_data/figureS38/'
+out_dir = 'generated_figures/'
 
 ### compare effect sizes between high and low Watershed score rare variants ###
 mpra_data = fread(paste0(data_dir, 'figS38_input_data.txt'))

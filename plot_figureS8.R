@@ -1,7 +1,6 @@
 library(ggplot2)
 library(data.table)
 library(dplyr)
-library(RColorBrewer)
 library(cowplot)
 
 gtex_v8_figure_theme <- function() {
@@ -13,14 +12,14 @@ gtex_v8_figure_theme <- function() {
                legend.text = element_text(size=7), legend.title = element_text(size=8)))
 }
 
-data_dir = '~/gtex_v8_rare_variant_figure_generation/processed_input_data/figureS8/'
-out_dir = '~/gtex_v8_rare_variant_figure_generation/generated_figures/'
+data_dir = 'processed_input_data/figureS8/'
+out_dir = 'generated_figures/'
 
 dcols = c('#7F5A83', '#BFCDE0', '#0D324D')
 names(dcols) = c('aseOutliers', 'eOutliers', 'sOutliers')
 
 ### panel A - distribution of proportion of tested tissues supporting multi-tissue outlier calls ###
-outlier_summary = fread(paste0(data_dir, 'figS8AB_input_data.txt'))
+outlier_summary = fread(paste0(data_dir, 'figS8ab_input_data.txt'))
 outlier_summary$Category = factor(outlier_summary$Category, levels=c('eOutliers', 'aseOutliers', 'sOutliers'))
 
 sf1 = ggplot(outlier_summary, aes(Prop)) + geom_density(aes(fill=Category),alpha=0.6) + 
@@ -39,7 +38,7 @@ sf2 = ggplot(outlier_summary, aes(NT)) + geom_density(aes(fill=Category),alpha=0
         legend.position=c(0.8,0.9)) 
 
 ### panel C - rare variant enrichments depending on tissue support ###
-tissue_enrich = fread(paste0(data_dir, 'figS8C_input_data.txt'))
+tissue_enrich = fread(paste0(data_dir, 'figS8c_input_data.txt'))
 tissue_enrich$Threshold = factor(tissue_enrich$Threshold, levels=c('>1','>2','25','50','75','90','100'))
 tissue_enrich$Category = factor(tissue_enrich$Category, levels=c('eOutliers', 'aseOutliers', 'sOutliers'))
 sf3 = ggplot(tissue_enrich %>% filter(!is.na(Upper)), aes(x=Threshold, y=Riskratio, Group=Category)) +

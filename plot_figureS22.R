@@ -14,8 +14,8 @@ gtex_v8_figure_theme <- function() {
 }
 
 
-data_dir = '~/gtex_v8_rare_variant_figure_generation/processed_input_data/figureS22/'
-out_dir = '~/gtex_v8_rare_variant_figure_generation/generated_figures/'
+data_dir = 'processed_input_data/figureS22/'
+out_dir = 'generated_figures/'
 
 dcols = c('#7F5A83', '#BFCDE0', '#0D324D')
 names(dcols) = c('aseOutliers', 'eOutliers', 'sOutliers')

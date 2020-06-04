@@ -2,7 +2,6 @@ library(ggplot2)
 library(ggthemes)
 library(data.table)
 library(dplyr)
-library(RColorBrewer)
 library(cowplot)
 library(epitools)
 
@@ -16,8 +15,8 @@ gtex_v8_figure_theme <- function() {
 }
 
 
-data_dir = '~/gtex_v8_rare_variant_figure_generation/processed_input_data/figureS14/'
-out_dir = '~/gtex_v8_rare_variant_figure_generation/generated_figures/'
+data_dir = 'processed_input_data/figureS14/'
+out_dir = 'generated_figures/'
 
 calc_risk <- function(data, zt) {
   data = filter(data, Z == zt)
@@ -29,7 +28,7 @@ calc_risk <- function(data, zt) {
 }
 
 ### panel A - enrichment of rare SVs near eOutliers split by gene-overlapping and not ###
-sv_count_table = fread(paste0(data_dir, 'figS14A_input_data.txt'))
+sv_count_table = fread(paste0(data_dir, 'figS14a_input_data.txt'))
 coding_enrich = do.call(rbind, lapply(list(3,4,5,6), function(x) calc_risk(sv_count_table %>% filter(Category == 'Coding'), x)))
 noncoding_enrich = do.call(rbind, lapply(list(3,4,5,6), function(x) calc_risk(sv_count_table %>% filter(Category == 'Noncoding'), x)))
 
@@ -47,7 +46,7 @@ sfig_A = ggplot(both_enrich, aes(x=Threshold,y=Riskratio,Group=Category)) +
         legend.key.width = unit(0.04, "cm"))
 
 ## panel B - number outlier-associated rare SVs per person (over and under) ###
-count_data = fread(paste0(data_dir, 'figS14B_input_data.txt'))
+count_data = fread(paste0(data_dir, 'figS14b_input_data.txt'))
 sfig_B = ggplot(count_data, aes(x=Direction, y=NumSV)) + geom_jitter() + geom_violin() + theme_bw() +
   ylab('# outlier-associated rare SVs per person') + xlab('Direction') +
   annotate("text", x=1, y=6, label='Mean = 0.19', cex=3) +
@@ -55,7 +54,7 @@ sfig_B = ggplot(count_data, aes(x=Direction, y=NumSV)) + geom_jitter() + geom_vi
   gtex_v8_figure_theme()
 
 ## panel C - median Z-scores of gene pairs affected by same rare SV ###
-sv_gene_data = fread(paste0(data_dir, 'figS14C_input_data.txt'))
+sv_gene_data = fread(paste0(data_dir, 'figS14c_input_data.txt'))
 vcols = c('#FCBBA1', '#EA5948', '#9E0142')
 names(vcols) = c('BND', 'DEL', 'DUP')
 sfig_C = ggplot(sv_gene_data, aes(x=MedZ.x,y=MedZ.y)) + geom_point(size=1.5,aes(color=variant_cat.x)) + theme_bw() +

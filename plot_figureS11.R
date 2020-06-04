@@ -2,7 +2,6 @@ library(ggplot2)
 library(ggthemes)
 library(data.table)
 library(dplyr)
-library(RColorBrewer)
 library(cowplot)
 
 gtex_v8_figure_theme <- function() {
@@ -15,14 +14,14 @@ gtex_v8_figure_theme <- function() {
 }
 
 
-data_dir = '~/gtex_v8_rare_variant_figure_generation/processed_input_data/figureS11/'
-out_dir = '~/gtex_v8_rare_variant_figure_generation/generated_figures/'
+data_dir = 'processed_input_data/figureS11/'
+out_dir = 'generated_figures/'
 
 dcols = c('#7F5A83', '#0D324D', '#BFCDE0')
 names(dcols) = c('aseOutliers', 'sOutliers', 'eOutliers')
 
 ### panel A - comparison of relative risk of nearby rare variants between outlier types ###
-risk_compare = fread(paste0(data_dir, 'figS11A_input_data.txt'))
+risk_compare = fread(paste0(data_dir, 'figS11a_input_data.txt'))
 plot_cols = readRDS(paste0(data_dir, 'variant_type_colors.rds'))
 risk_compare$Type = factor(risk_compare$Type, levels=c('eOutliers', 'aseOutliers', 'sOutliers'))
 sfig_A = ggplot(risk_compare %>% filter(is.finite(FC)), aes(x=Cat, y=FC)) + 
@@ -37,7 +36,7 @@ sfig_A = ggplot(risk_compare %>% filter(is.finite(FC)), aes(x=Cat, y=FC)) +
 
 
 ### panel B - proportion of rare variants leading to outlier signal across types ###
-prop_variants = fread(paste0(data_dir, 'figS11B_input_data.txt'))
+prop_variants = fread(paste0(data_dir, 'figS11b_input_data.txt'))
 prop_variants$variable = factor(prop_variants$variable, levels=c('eOutliers', 'aseOutliers', 'sOutliers'))
 sfig_B = ggplot(prop_variants,aes(x=Feature,y=Risk,Group=variable)) +
   geom_bar(aes(fill=variable),stat='identity',color='black',position='dodge') +

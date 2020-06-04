@@ -12,8 +12,8 @@ gtex_v8_figure_theme <- function() {
                legend.text = element_text(size=7), legend.title = element_text(size=8)))
 }
 
-data_dir = '~/gtex_v8_rare_variant_figure_generation/processed_input_data/figureS25/'
-out_dir = '~/gtex_v8_rare_variant_figure_generation/generated_figures/'
+data_dir = 'processed_input_data/figureS25/'
+out_dir = 'generated_figures/'
 
 ### panel A - plot enrichment of nearby rare SNVs in single tissue eOutliers across thresholds ###
 single_enrich = fread(paste0(data_dir, 'figS25_input_data.txt'))
@@ -38,8 +38,4 @@ sfig_C = ggplot(single_enrich %>% filter(Type == 'SVs'), aes(x=ZT, y=Riskratio))
 sfig <- plot_grid(sfig_A, sfig_B, sfig_C, labels = c('A','B', 'C'), ncol=3)
 
 ggsave(sfig, file=paste0(out_dir, 'figS25.pdf'), width=7.2, height=4,units="in")
-
-
-
- 
 

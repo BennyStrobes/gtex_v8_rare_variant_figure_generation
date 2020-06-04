@@ -2,7 +2,6 @@ library(gplots)
 library(ggplot2)
 library(data.table)
 library(dplyr)
-library(RColorBrewer)
 library(cowplot)
 
 gtex_v8_figure_theme <- function() {
@@ -15,11 +14,11 @@ gtex_v8_figure_theme <- function() {
 }
 
 
-data_dir = '~/gtex_v8_rare_variant_figure_generation/processed_input_data/figureS26/'
-out_dir = '~/gtex_v8_rare_variant_figure_generation/generated_figures/'
+data_dir = 'processed_input_data/figureS26/'
+out_dir = 'generated_figures/'
 
 ### panel A - comparison of imputation methods ###
-recon_errors = fread(paste0(data_dir, 'figS26A_input_data.txt'))
+recon_errors = fread(paste0(data_dir, 'figS26a_input_data.txt'))
 meth.colors = c(brewer.pal(9, 'YlGnBu')[3:9],'grey')
 names(meth.colors) = c('EM','KNN','MEAN','PMD','SOFT','STFZ','MEDZ','RANDOM')
 recon_errors$MethodName = factor(recon_errors$MethodName,levels=c('EM', 'KNN', 'MEAN', 'PMD', 'SOFT', 'RANDOM'))
@@ -30,7 +29,7 @@ sfig_A = ggplot(recon_errors,aes(x=MethodName,y=Error,Group=MethodName)) +
   theme(axis.text.x=element_text(hjust=1,angle=40))
 
 ### panel B - Comparing values of k for KNN imputation ###
-recon_error_knn = fread(paste0(data_dir, 'figS26B_input_data.txt'))
+recon_error_knn = fread(paste0(data_dir, 'figS26b_input_data.txt'))
 recon_error_knn$Cat = factor(recon_error_knn$Cat, levels=c(0,1))
 sfig_B = ggplot(recon_error_knn, aes(x = factor(Parameter), y = Error)) +
   geom_boxplot(aes(fill=Cat),outlier.size=0.5) + xlab('Value of k') +
@@ -39,7 +38,7 @@ sfig_B = ggplot(recon_error_knn, aes(x = factor(Parameter), y = Error)) +
   theme(axis.text.x=element_text(hjust=1,angle=90))
 
 ### panel C - comparison of enrichments when imputing vs not ###
-knn_enrich = fread(paste0(data_dir, 'figS26C_input_data.txt'))
+knn_enrich = fread(paste0(data_dir, 'figS26c_input_data.txt'))
 knn_enrich$PT = factor(knn_enrich$PT, levels=pts)
 sfig_C = ggplot(knn_enrich, aes(x=PT,y=Riskratio,Group=Method)) + 
   geom_point(size=2,aes(color=Method),position=position_dodge(width=0.5)) +
@@ -59,8 +58,4 @@ sfig_C = ggplot(knn_enrich, aes(x=PT,y=Riskratio,Group=Method)) +
 first_row <- plot_grid(sfig_A, sfig_B, sfig_C, labels = c('A','B', 'C'), ncol=3, rel_widths=c(1,1,2), axis='tblr', align='h')
 
 ggsave(first_row, file=paste0(out_dir, 'figS26.pdf'), width=7.2, height=3,units="in")
-
-
-
-
 

@@ -2,7 +2,6 @@ library(ggplot2)
 library(cowplot)
 library(data.table)
 library(dplyr)
-library(RColorBrewer)
 library(epitools)
 
 gtex_v8_figure_theme <- function() {
@@ -14,13 +13,14 @@ gtex_v8_figure_theme <- function() {
                legend.text = element_text(size=7), legend.title = element_text(size=8)))
 }
 
-data_dir = '~/gtex_v8_rare_variant_figure_generation/processed_input_data/figure3/'
+data_dir = 'processed_input_data/figure3/'
+out_dir = 'generated_figures/'
 
 dcols = c('#7F5A83', '#0D324D', '#BFCDE0')
 names(dcols) = c('aseOutliers', 'sOutliers', 'eOutliers')
 
 ### panel A - outlier replication across tissues ###
-sharing_med = fread(paste0(data_dir, "fig3A_input_data.txt"))
+sharing_med = fread(paste0(data_dir, "fig3a_input_data.txt"))
 fig_order = sharing_med %>% filter(type == "aseOutliers") %>% 
   arrange(desc(frac))
 
@@ -38,7 +38,7 @@ fig_3A = ggplot(sharing_med, aes(tissue_name, frac, fill = type)) +
         legend.key.size=unit(0.05,'in')) 
 
 ### panel B - single tissue rare variant enrichments ###
-risks = fread(paste0(data_dir, 'fig3B_input_data.txt'))
+risks = fread(paste0(data_dir, 'fig3b_input_data.txt'))
 outlier_threshold <- c(0.05, 1e-2, 1e-3, 1e-4, 1e-5, 1e-6, 1e-7, 1e-8, 1e-9)
 risks$sig <- factor(risks$sig, levels = outlier_threshold)
 
@@ -52,7 +52,7 @@ fig_3B = ggplot(risks, aes(sig, ratio, fill = outlier_type)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 ### panel C - single tissue enrichments by variant type ###
-type_risks = fread(paste0(data_dir, "fig3C_input_data.txt"))
+type_risks = fread(paste0(data_dir, "fig3c_input_data.txt"))
 type_risks$outlier_type = factor(type_risks$outlier_type, levels=c('eOutliers', 'aseOutliers', 'sOutliers'))
 type_risks$Variant_type = factor(type_risks$Variant_type, levels=c('Splice donor', 'Splice acceptor', 'Stop gained', 'Frameshift', 'Splice', 'Inframe deletion'))
 fig_3C = ggplot(type_risks, aes(x = Variant_type, y = ratio, fill = outlier_type)) +
@@ -71,7 +71,7 @@ names(mcols) = c('MEDZ', 'Correlation')
 mfills = c(alpha('#C1CDDE', 0.4), alpha('#7FCDBB',0))
 names(mfills) = names(mcols)
 
-outlier_props = fread(paste0(data_dir, 'fig3D_input_data.txt'))
+outlier_props = fread(paste0(data_dir, 'fig3d_input_data.txt'))
 
 fig_3D = ggplot(outlier_props, aes(x = prop, colour = Method, fill = Method)) +
   geom_density(bw = 0.04, size = 0.75) + ylab('Density') +
@@ -88,7 +88,7 @@ fig_3D = ggplot(outlier_props, aes(x = prop, colour = Method, fill = Method)) +
         legend.key.size=unit(0.05,'in'))
 
 ### panel E - rare variant enrichment in tissue-specific enhancers ###
-enh_risks = fread(paste0(data_dir, 'fig3E_input_data.txt'))
+enh_risks = fread(paste0(data_dir, 'fig3e_input_data.txt'))
 enh_risks$Zscore = factor(enh_risks$ZT, levels=c(3,5,7))
 enh_risks$Type = factor(enh_risks$Type, levels=c('Matched', 'Unmatched'))
 ccols = c('#C1E0BC', '#7FCDBB', '#00ABB8')

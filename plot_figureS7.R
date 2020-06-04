@@ -12,12 +12,11 @@ gtex_v8_figure_theme <- function() {
                legend.text = element_text(size=7), legend.title = element_text(size=8)))
 }
 
-data_dir = '~/gtex_v8_rare_variant_figure_generation/processed_input_data/figureS7/'
-out_dir = '~/gtex_v8_rare_variant_figure_generation/generated_figures/'
-
+data_dir = 'processed_input_data/figureS7/'
+out_dir = 'generated_figures/'
 
 ### panel A - results of linear model of outlier statistics vs rare variant nearby ###
-continuous_enrich = fread(paste0(data_dir, 'figS7A_input_data.txt'))
+continuous_enrich = fread(paste0(data_dir, 'figS7a_input_data.txt'))
 continuous_enrich$Category = factor(continuous_enrich$Category, levels=c('eOutliers', 'aseOutliers', 'sOutliers'))
 sf1 = ggplot(continuous_enrich, aes(x=Category,y=Beta)) + geom_point(size=2) +
   geom_errorbar(aes(ymin = Beta - 1.95*SE, ymax = Beta + 1.95*SE), width=0,position=position_dodge(width=0.5)) +
@@ -26,7 +25,7 @@ sf1 = ggplot(continuous_enrich, aes(x=Category,y=Beta)) + geom_point(size=2) +
   facet_wrap(.~Variant,scales='free') + theme(strip.background = element_blank())
 
 ### panel B - continuous rare variant enrichments split by type ###
-all_coefs = fread(paste0(data_dir, 'figS7B_input_data.txt'))
+all_coefs = fread(paste0(data_dir, 'figS7b_input_data.txt'))
 plot_cols = readRDS(paste0(data_dir, 'variant_type_colors.rds'))
 all_coefs$Variant = factor(all_coefs$Variant, levels=c('no_variant','other_noncoding','TE', 'coding','TSS', 'conserved_noncoding','INV','BND','DEL','CNV','DUP', 'splice_region_variant', 'splice_acceptor_variant','frameshift','splice_donor_variant', 'stop'))
 all_coefs$Category = factor(all_coefs$Category, levels=c('eOutliers', 'aseOutliers', 'sOutliers'))

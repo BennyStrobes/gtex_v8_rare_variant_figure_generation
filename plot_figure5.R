@@ -2,7 +2,6 @@ library(ggplot2)
 library(cowplot)
 library(data.table)
 library(dplyr)
-library(RColorBrewer)
 library(ggpubr)
 
 
@@ -15,14 +14,14 @@ gtex_v8_figure_theme <- function() {
                legend.text = element_text(size=7), legend.title = element_text(size=8)))
 }
 
-data_dir = '~/gtex_v8_rare_variant_figure_generation/processed_input_data/figure5/'
-out_dir = '~/gtex_v8_rare_variant_figure_generation/generated_figures/'
+data_dir = 'processed_input_data/figure5/'
+out_dir = 'generated_figures/'
 
 dcols = c('#7F5A83', '#0D324D', '#BFCDE0')
 names(dcols) = c('aseOutliers', 'sOutliers', 'eOutliers')
 
 ### panel A - counts of outliers and outlier-associated variants per individual ###
-outlier_counts = fread(paste0(data_dir, 'fig5A_input_data.txt'))
+outlier_counts = fread(paste0(data_dir, 'fig5a_input_data.txt'))
 outlier_counts$variable = factor(outlier_counts$variable, levels=c('Outliers', 'Outlier RV', 'Coloc Outlier RV', 'Watershed > 0.5', 'Watershed > 0.7', 'Watershed > 0.9'))
 outlier_counts$Type = factor(outlier_counts$Type, levels=c('eOutliers', 'aseOutliers', 'sOutliers'))
 
@@ -38,7 +37,7 @@ fig_5A = ggplot(outlier_counts, aes(x=variable,y=value+1)) +
         axis.text.x=element_text(hjust=1,angle=35))
 
 ### panel B - distribution of variant effect size percentiles across categories ###
-ukbb_any_coloc = fread(paste0(data_dir, 'fig5B_input_data.txt'))
+ukbb_any_coloc = fread(paste0(data_dir, 'fig5b_input_data.txt'))
 my_comparisons <- list(c("Coloc Outlier", "Outlier"), c("Coloc Outlier", "Non-Outlier"),c("Outlier", "Non-Outlier"))
 ukbb_any_coloc$Category = factor(ukbb_any_coloc$Category, levels=c('Non-Outlier', 'Outlier', 'Coloc Outlier'))
 fig_5B = ggplot(ukbb_any_coloc, aes(x=Category,y=VPercentile)) + 
@@ -49,7 +48,7 @@ fig_5B = ggplot(ukbb_any_coloc, aes(x=Category,y=VPercentile)) +
   gtex_v8_figure_theme() + theme(axis.text.x=element_text(hjust=1,angle=35))
 
 ### panel C - proportion of predicted functional variants falling in top quarter of effect sizes across co-localized traits ###
-hit_random_table = fread(paste0(data_dir, 'fig5C_input_data.txt'))
+hit_random_table = fread(paste0(data_dir, 'fig5c_input_data.txt'))
 hit_random_table$Posterior = factor(hit_random_table$Posterior, levels=c(0.01, 0.05, 0.25, 0.5, 0.75, 0.9))
 fig_5C = ggplot(hit_random_table %>% filter(Category == 'Random', Model == 'Watershed'), aes(x=Posterior,y=Prop)) + geom_boxplot() +
   geom_point(data = filter(hit_random_table, Category == 'Actual', Model == 'Watershed'), aes(x=Posterior, y=Prop),color = 'red',size=1) +
@@ -57,7 +56,7 @@ fig_5C = ggplot(hit_random_table %>% filter(Category == 'Random', Model == 'Wate
   gtex_v8_figure_theme() 
 
 ### panel D - example rare variant-trait association in asthma ###
-asthma_pval_data = fread(paste0(data_dir, 'fig5D_pval_input_data.txt'))
+asthma_pval_data = fread(paste0(data_dir, 'fig5d_pval_input_data.txt'))
 
 asthma_pval_data$IsVar = factor(asthma_pval_data$IsVar, levels=c('VOI', 'leadSNP', 'Other'))
 fig_5D1 = ggplot(asthma_pval_data, aes(x=Pos,y=-log10(pval))) + geom_point(size=0.5) + 
@@ -70,7 +69,7 @@ fig_5D1 = ggplot(asthma_pval_data, aes(x=Pos,y=-log10(pval))) + geom_point(size=
   geom_hline(yintercept=-log10(5e-08), color='grey') +
   gtex_v8_figure_theme()
 
-asthma_effect_sizes = fread(paste0(data_dir, 'fig5D_betas_input_data.txt'))
+asthma_effect_sizes = fread(paste0(data_dir, 'fig5d_betas_input_data.txt'))
 asthma_effect_sizes$VOI = factor(asthma_effect_sizes$VOI, levels=c('Watershed variant','lead SNP','Other'))
 fig_5D2 = ggplot(asthma_effect_sizes, aes(x=minor_AF,y=abs(beta_scaled))) +
   geom_point(aes(color=VOI),size=0.5) + theme_bw() + guides(size=F) +
@@ -83,7 +82,7 @@ fig_5D2 = ggplot(asthma_effect_sizes, aes(x=minor_AF,y=abs(beta_scaled))) +
 fig_5D <- plot_grid(fig_5D1, fig_5D2, labels = NULL, nrow=2)
 
 ### panel E - example rare variant-trait association in high cholesterol ###
-chol_pval_data = fread(paste0(data_dir, 'fig5E_pval_input_data.txt'))
+chol_pval_data = fread(paste0(data_dir, 'fig5e_pval_input_data.txt'))
 
 fig_5E1 = ggplot(chol_pval_data, aes(x=Pos,y=-log10(pval))) + geom_point(size=0.5) + 
   theme_bw() + guides(color=F) + 
@@ -95,7 +94,7 @@ fig_5E1 = ggplot(chol_pval_data, aes(x=Pos,y=-log10(pval))) + geom_point(size=0.
   geom_hline(yintercept=-log10(5e-08), color='grey') +
   gtex_v8_figure_theme()
 
-chol_betas_data = fread(paste0(data_dir, 'fig5E_betas_input_data.txt'))
+chol_betas_data = fread(paste0(data_dir, 'fig5e_betas_input_data.txt'))
 fig_5E2 = ggplot(chol_betas_data, aes(x=minor_AF,y=abs(beta_scaled))) +
   geom_point(aes(color=VOI),size=1) + theme_bw() + guides(size=F) +
   geom_point(data = subset(chol_betas_data, VOI != 'Other'),
