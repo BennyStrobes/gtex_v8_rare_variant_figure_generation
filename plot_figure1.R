@@ -2,7 +2,6 @@ library(ggplot2)
 library(cowplot)
 library(data.table)
 library(dplyr)
-library(RColorBrewer)
 library(epitools)
 
 gtex_v8_figure_theme <- function() {
