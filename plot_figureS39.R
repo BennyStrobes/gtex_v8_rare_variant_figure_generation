@@ -29,8 +29,8 @@ class_colors <- c(
 names(class_colors) <- c("ASE", "Splicing", "Total Expression")
 
 
-dat <- read_csv("processed_input_data/figureS39/all_variants_aFC_watershed_pretty.csv")
-dat <- filter(dat, !is.na(mean_aFC)) %>% select(-X13)
+dat <- read_tsv("processed_input_data/figureS39/figS39_input_data.txt")
+dat <- filter(dat, !is.na(mean_aFC))
 dat$pbonf <- p.adjust(dat$pvalues, method = "fdr")
 
 # Tidy up dat
