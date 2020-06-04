@@ -22,14 +22,14 @@ names(color_hex) <- tissue_abbrv
 
 # Load the results files
 # _OA are the tables that have Only Available cross tissue gene comparisons
-input_path = "processed_input_data/figureS21/heatmap_tables/"
-ASE_sharing_OA <- read.csv(paste0(input_path, "ASE_sharing_heatmap_only_available_v8_Vg_no_go_indv_gene.tsv"), row.names = 1, check.names = F, sep = "\t")
-TE_sharing_OA <- read.csv(paste0(input_path, "TE_sharing_heatmap_only_available.tsv"), row.names = 1, check.names = F, sep = "\t")
-AS_sharing_OA <- read.csv(paste0(input_path, "AS_sharing_heatmap_only_available.tsv"), row.names = 1, check.names = F, sep = "\t")
+input_path = "processed_input_data/figureS21/"
+ASE_sharing_OA <- read.csv(paste0(input_path, "figS21_ASE_sharing_heatmaap_input_data.txt"), row.names = 1, check.names = F, sep = "\t")
+TE_sharing_OA <- read.csv(paste0(input_path, "figS21_TE_sharing_heatmap_input_data.txt"), row.names = 1, check.names = F, sep = "\t")
+AS_sharing_OA <- read.csv(paste0(input_path, "figS21_AS_sharing_heatmap_input_data.txt"), row.names = 1, check.names = F, sep = "\t")
 # _NA files include NAs as a non-shared outlier status
-ASE_sharing_NA <- read.csv(paste0(input_path, "ASE_sharing_heatmap_include_NA_v8_Vg_no_go_indv_gene.tsv"), row.names = 1, check.names = F, sep = "\t")
-TE_sharing_NA <- read.csv(paste0(input_path, "TE_sharing_heatmap_include_NA.tsv"), row.names = 1, check.names = F, sep = "\t")
-AS_sharing_NA <- read.csv(paste0(input_path, "AS_sharing_heatmap_include_NA.tsv"), row.names = 1, check.names = F, sep = "\t")
+ASE_sharing_NA <- read.csv(paste0(input_path, "figS21_ASE_NA_sharing_heatmap_input_data.txt"), row.names = 1, check.names = F, sep = "\t")
+TE_sharing_NA <- read.csv(paste0(input_path, "figS21_TE_NA_sharing_heatmap_input_data.txt"), row.names = 1, check.names = F, sep = "\t")
+AS_sharing_NA <- read.csv(paste0(input_path, "figS21_AS_NA_sharing_heatmap_input_data.txt"), row.names = 1, check.names = F, sep = "\t")
 
 # Remove rows and columns with missing data
 remove_missing <- function(table){
@@ -224,7 +224,7 @@ NA_decrease_plt <-
 # Make an aggregated sharing percentage plot using BH corected ANEVA-DOT p values
 # Make a barplot with median across columns on top and median across rows on bottom
 
-ASE_sharing_BH <- read.csv(paste0(input_path, "ASE_sharing_heatmap_BH_v8_Vg.tsv"), sep = "\t", row.names = 1)
+ASE_sharing_BH <- read.csv(paste0(input_path, "figS21c_ASE_BH_input_data.txt"), sep = "\t", row.names = 1)
 
 tmp <- ASE_sharing_BH
 tmp[tmp == 1] <- NA
