@@ -524,6 +524,42 @@
 		* Column4: "variant_allele": Nucleotide of variant allele
 		* Column5: "major_allele": Nucleotide of common allele
 
+## Figure S21
+* **heatmaps/ASE_sharing_heatmap_only_available_v8_Vg_no_go_indv_gene.tsv**, **heatmaps/TE_sharing_heatmap_only_available.tsv**, **heatmaps/AS_sharing_heatmap_only_available.tsv**
+	* All three files are formatted as square matrices of tissue x tissue indicating the proportion of outliers discovered in one tissue that replicate in the corresponding tissue, limiting to genes tested in both tissues.
+* **heatmaps/ASE_sharing_heatmap_include_NA_v8_Vg_no_go_indv_gene.tsv**, **heatmaps/TE_sharing_heatmap_include_NA.tsv**, **heatmaps/AS_sharing_heatmap_include_NA.tsv**
+	* All three files are formatted as square matrices of tissue x tissue indicating the proportion of outliers discovered in one tissue that replicate in the corresponding tissue, considering a missing gene in one tissue as a non-sharing event.
+* **heatmaps/ASE_sharing_heatmap_BH_v8_Vg.tsv*
+	* Formatted as square matrices of tissue x tissue indicating the proportion of aseOutliers discovered in one tissue that replicate in the corresponding tissue when using a Benjamini-Hochberg corrected p-value threshold of 0.05.
+
+## Figure S22
+* **figS22_input_data.txt**
+	* Data frame with outlier replication between clinically accessible tissues and all other tissues
+	* Relevent column descriptors (base 1)
+		* Column1: "long": Long form of tissue name
+		* Column2: "Type": Type of outlier (eOutlier, aseOutlier or sOutlier)
+		* Column3: "variable": Indicates which clinically accessible tissue outlier was identified in (LCLs, Whole Blood or Fibroblasts) or >1 Tissue to indicate it was found in at least 2
+		* Column4: "value": Proportion of outliers that replicate in the given tissue
+
+## Figure S23
+* **single_tissue_variant_enrichment_v8_Vg.tsv**
+	* Data frame containing relative risk estimates of nearby rare SNVs for outliers across all tissues defined using FDR-corrected p-values
+	* Relevent column descriptors (base 1)
+		* Column1: "tissue"
+		* Column2: "ratio": Relative risk estimate
+		* Column3: "lower.q": Lower bound of 95% confidence interval around risk estimate
+		* Column4: "upper.q": Upper bound of 95% confidence interval around risk estimate
+		* Column9: "sig": FDR-corrected p-value threshold
+		* Column11: "outlier_type": Type of outlier
+* **single_tissue_NMD_variant_enrichment_v8_Vg.tsv**
+	* Data frame containing relative risk estimates of nearby rare variants of varying annotations for outliers across all tissues using an FDR-corrected p-value of 0.05
+	* Relevent column descriptors (base 1)
+		* Column1: "tissue"
+		* Column2: "ratio": Relative risk estimate
+		* Column3: "lower.q": Lower bound of 95% confidence interval around risk estimate
+		* Column4: "upper.q": Upper bound of 95% confidence interval around risk estimate
+		* Column9: "anno": Variant annotation category
+		* Column10: "outlier_type": Type of outlier
 
 ## Figure S24
 * **figS24_tissue_names_input_data.txt**
@@ -549,7 +585,38 @@
 		* Column1: "odds_ratio": The junction usage of the splice site
 		* Column2: "type": The type of rare variant in the PPT. Does it create the consensus or destroy the PPT
 
-
+## Figure S25
+* **figS25_input_data.txt**
+	* Data frame containing relative risk estimates for SNVs, indels or SVs nearby single tissue eOutliers across thresholds
+	* Relevent column descriptors (base 1):
+		* Column1: "Riskratio": Relative risk estimate
+		* Column2: "Lower": Lower bound of 95% confidence interval around risk estimate
+		* Column3: "Upper": Upper bound of 95% confidence interval around risk estimate
+		* Column5: "ZT": Z-score threshold 
+		* Column6: "Type": Variant type (either SNVs, indels or SVs)
+		* Column8: "Tissue"
+		
+## Figure S26
+* **figS26A_input_data.txt**
+	* Data frame containing imputation error for expression imputation across several imputation methods
+	* Relevent column descriptors (base 1):
+		* Column3: "Error": Reconstruction error after imputing known values
+		* Column4: "MethodName": Imputation method (either EM, KNN, MEAN, PMD, RANDOM, SOFT)
+* **figS26B_input_data.txt**
+	* Data frame containing imputation error for KNN-imputed expression data across varying values for k
+	* Relevent column descriptors (base 1):
+		* Column3: "Parameter": Value of k
+		* Column4: "Error": Reconstruction error after imputing known values
+* **figS26C_input_data.txt**
+	* Data frame containing relative risk of nearby rare variant estimates for correlation outliers across thresholds both with and without first imputing missing data
+	* Relevent column descriptors (base 1):
+		* Column1: "Riskratio": Relative risk estimate
+		* Column2: "Lower": Lower bound of 95% confidence interval around risk estimate
+		* Column3: "Upper": Upper bound of 95% confidence interval around risk estimate
+		* Column5: "Type": Variant type (SNVs+indels or SVs)
+		* Column6: "PT": FDR-corrected p-value threshold
+		* Column7: "Method": Imputation method (KNN or None)
+		
 ## Figure S27
 * **figS27_input_data.txt**
 	* Data frame containing precision and recall of Watershed and CADD for each outlier type
@@ -660,4 +727,60 @@
 		* Column1: "pval": -log10(outlier_pvalue) of gene nearby rare variant in ASMAD cohort
 		* Column2: "type": GTEx Watershed posterior bin of rare variant
 		* Column3: "model": Type of model used in gtex. Either Watershed or GAM
+		
+## Figure S38
+* **figS38_input_data.txt**
+	* Data frame containing MPRA results
+	* Relevent column descriptors (base 1):
+		* Column7: "log2FoldChange_allele"
+		* Column18: "WS_Bin": Variant bin based on Watershed score (High or Low)
+		
+## Figure S39
+* **all_variants_aFC_watershed_pretty.csv**
+	* Data frame containing CRISPR editing results
+	* Relevent column descriptors (base 1):
+		* Column3: "mean_aFC": mean allelic fold-change
+		* Column10: "total_expression_watershed_posterior"
+		* Column11: "ase_watershed_posterior"
+		
+## Figure S40
+* **figS40AB_input_data.txt**
+	* Data frame containing distribution of Watershed and CADD scores across GTEx rare variants found in UKBB
+	* Relevent column descriptors (base 1):
+		* Column3: "MaxWS": Maximum watershed score for the given variant across all individuals and outlier types
+		* Column4: "RawScore": Variant CADD score
+* **figS40C_input_data.txt**
+	* Data frame containing distribution of Watershed and CADD scores across GTEx rare variants found in UKBB with both scores available
+	* Relevent column descriptors (base 1):
+		* Column3: "RawScore": Variant CADD score
+		* Column4: "ws_posterior": Maximum watershed score for the given variant across all individuals and outlier types
+* **figS40D_input_data.txt**
+	* Data frame containing the proportion of variants of different types that have high Watershed scores over those with high CADD scores
+	* Relevent column descriptors (base 1):
+		* Column1: "Name": Variant annotation
+		* Column2: "FC": Fold-change in proportion of variants with high Watershed / high CADD scores
+* **figS40E_input_data.txt**
+	* Data frame containing the proportion of variants falling in the top 25th percentile in co-localized regions for relevant traits split by using a Watershed posterior threshold and selecting the top N CADD variants to match
+	* Relevent column descriptors (base 1):
+		* Column1: "Posterior": Watershed posterior threshold
+		* Column2: "Cat": Indicates whether the values are from a random permutation or actual
+		* Column3: "Prop": Proportion of variants in top 25th percentile at the given threshold
+		* Column4: "Model": either Watershed or CADD
+
+## Figure S41
+* **figS41_input_data.txt**
+	* Data frame containing summary statistics from GWAS of cholesterol traits in MVP
+	* Relevent column descriptors (base 1):
+		* Column5: "BETA": Effect size
+		* Column9: "VOI": Indicate which variant is the high Watershed scoring variant
+		* Column10: "GAF": Variant allele frequency from non-Finnish Europeans in gnomAD
+		
+## Figure S42
+* **figS42_input_data.txt**
+	* Data frame containing summary statistics from GWAS of cholesterol traits in JHS
+	* Relevent column descriptors (base 1):
+		* Column6: "BETA": Effect size
+		* Column10: "AF_NFE": Variant allele frequency from non-Finnish Europeans in gnomAD
+		* Column11: "VOI": Indicate which variant is the high Watershed scoring variant
+
 
