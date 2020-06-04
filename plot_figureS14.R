@@ -20,7 +20,7 @@ out_dir = 'generated_figures/'
 
 calc_risk <- function(data, zt) {
   data = filter(data, Z == zt)
-  counttable = rbind(c(data[1,1], data[1,2]), c(data[1,3], data[1,4]))
+  counttable = rbind(as.numeric(c(data[1,1], data[1,2])), as.numeric(c(data[1,3], data[1,4])))
   rr = epitab(counttable,method="riskratio")$tab
   estims = data.frame(Riskratio = rr[2,5], Lower = rr[2,6], Upper = rr[2,7],
                       Pval = rr[2, 8], Threshold = zt)
@@ -47,10 +47,12 @@ sfig_A = ggplot(both_enrich, aes(x=Threshold,y=Riskratio,Group=Category)) +
 
 ## panel B - number outlier-associated rare SVs per person (over and under) ###
 count_data = fread(paste0(data_dir, 'figS14b_input_data.txt'))
+mean_over = round(mean(filter(count_data, Direction == 'Over eOutliers')$NumSV),2)
+mean_under = round(mean(filter(count_data, Direction == 'Under eOutliers')$NumSV),2)
 sfig_B = ggplot(count_data, aes(x=Direction, y=NumSV)) + geom_jitter() + geom_violin() + theme_bw() +
   ylab('# outlier-associated rare SVs per person') + xlab('Direction') +
-  annotate("text", x=1, y=6, label='Mean = 0.19', cex=3) +
-  annotate("text", x=2, y=7.8, label='Mean = 0.23', cex=3) +
+  annotate("text", x=1, y=6, label=paste0('Mean = ', mean_over), cex=3) +
+  annotate("text", x=2, y=7.8, label=paste0('Mean = ', mean_under), cex=3) +
   gtex_v8_figure_theme()
 
 ## panel C - median Z-scores of gene pairs affected by same rare SV ###
