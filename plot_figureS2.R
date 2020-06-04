@@ -13,8 +13,8 @@ attach(gtex_colors)
 names(tissue_site_detail) <- tissue_abbrv
 
 ############# Panel A. Dots per indv per tissue ##########
-dots_per_indv_per_tiss <- read_rds("processed_input_data/figureS2/dots_per_indv_per_tiss_v8_Vg.rds")
-genes_w_Vg_per_tiss <- read_rds("processed_input_data/figureS2/genes_w_Vg_per_tiss.rds")
+dots_per_indv_per_tiss <- read_rds("processed_input_data/figureS2/figS2a_dots_input_data.rds")
+genes_w_Vg_per_tiss <- read_rds("processed_input_data/figureS2/figS2a_genes_input_data.rds")
 median_dots_per_indv_per_tiss <- map_dbl(dots_per_indv_per_tiss, ~ median(.x$count))
 
 # Save some things that will be useful 
@@ -97,7 +97,7 @@ Vg_coverage_plt <-
 
 
 ########## B. Outlier Times ###########
-outlier_times <- read_tsv("processed_input_data/figureS2/outlier_times_v8_Vg.tsv")
+outlier_times <- read_tsv("processed_input_data/figureS2/figS2b_input_data.txt")
 
 library("FSA")
 frequent.outlier <- 
@@ -119,7 +119,7 @@ outlier_times_plt <-
 
 ########## Panel C. Total Median DOTs per individual plot #############
 # Load data from Rstudio server to show coding genes and highly expressed coding genes coverage distribution
-totals_facet <- read_rds("processed_input_data/figureS2/tests_per_indv_faceted_plt_v8_Vg.rds")
+totals_facet <- read_rds("processed_input_data/figureS2/figS2c_input_data.rds")
 totals_facet$method <- relevel(totals_facet$method, "TE")
 #levels(totals_facet$method) <- c("TE", "ASE", "AS")
 
