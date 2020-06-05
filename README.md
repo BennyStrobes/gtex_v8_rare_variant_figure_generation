@@ -49,7 +49,7 @@ The following scripts were generated using **Dependencies and Testing Environmen
 * R package viridis (0.5.1)
 * R package ggridges (0.5.2)
 
-The following scripts were generated using **Dependencies and Testing Environment 1**:
+The following scripts were generated using **Dependencies and Testing Environment 2**:
 * plot_figure1.R
 * plot_figure3.R
 * plot_figure5.R
