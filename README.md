@@ -73,11 +73,29 @@ The following scripts were generated using **Dependencies and Testing Environmen
 * plot_figureS41.R
 * plot_figureS42.R
 
+## Dependencies and Testing Environment 3
+
+* R 4.0.0
+* R package tidyverse (1.3.0)
+* R package magrittr (1.5)
+* R package ggpubr (0.3.0)
+* R pakcage RcolorBrewer (1.1-2)
+* R package ggdendro (0.1-20)
+* R package cowplot (1.0.0)
+
+The following scripts were generated using **Dependencies and Testing Environment 3**:
+* plot_figureS2.R
+* plot_figureS21.R
+* plot_figureS23.R
+* plot_figureS39.R
+
 ## Authors
 
 * **Nicole Ferraro** -- [nmferraro5](https://github.com/nmferraro5) -- nferraro@stanford.edu 
 
 * **Ben Strober** -- [BennyStrobes](https://github.com/BennyStrobes) -- bstrober3@gmail.com
+
+* **Jonah Einson** --[jeinson](https://github.com/jeinson) -- jeinson@nygenome.org
 
 
 
