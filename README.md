@@ -1,5 +1,5 @@
 # GTEx version 8 rare variant figure generation
-This repository will re-generate all main and supplementary figures in "Diverse transcriptomic signatures across human tissues identify functional rare genetic variation" from a collection of processed input data, which can be found at the following link: https://drive.google.com/open?id=1dCxoYDPjK-E7qTUQhHN5Z-e6hiS5BQCG.
+This repository will re-generate all main and supplementary figures in "Diverse transcriptomic signatures across human tissues identify functional rare genetic variation" from a collection of processed input data, which can be found at the following link: https://drive.google.com/open?id=1dCxoYDPjK-E7qTUQhHN5Z-e6hiS5BQCG, with descriptions of each file found in the processed_input_data folder here.
 
 
 ## Dependencies and Testing Envivonment 1
