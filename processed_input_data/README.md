@@ -522,7 +522,7 @@
 	* All three files are formatted as square matrices of tissue x tissue indicating the proportion of outliers discovered in one tissue that replicate in the corresponding tissue, limiting to genes tested in both tissues.
 * **figS21_ASE_NA_sharing_heatmaap_input_data.txt**, **figS21_TE_NA_sharing_heatmap_input_data.txt**, **figS21_AS_NA_sharing_heatmap_input_data.txt**
 	* All three files are formatted as square matrices of tissue x tissue indicating the proportion of outliers discovered in one tissue that replicate in the corresponding tissue, considering a missing gene in one tissue as a non-sharing event.
-* **figS21c_ASE_BH_input_data.txt*
+* **figS21c_ASE_BH_input_data.txt**
 	* Formatted as square matrices of tissue x tissue indicating the proportion of aseOutliers discovered in one tissue that replicate in the corresponding tissue when using a Benjamini-Hochberg corrected p-value threshold of 0.05.
 
 ## Figure S22
