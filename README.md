@@ -95,7 +95,7 @@ The following scripts were generated using **Dependencies and Testing Environmen
 
 * **Ben Strober** -- [BennyStrobes](https://github.com/BennyStrobes) -- bstrober3@gmail.com
 
-* **Jonah Einson** --[jeinson](https://github.com/jeinson) -- jeinson@nygenome.org
+* **Jonah Einson** -- [jeinson](https://github.com/jeinson) -- jeinson@nygenome.org
 
 
 
