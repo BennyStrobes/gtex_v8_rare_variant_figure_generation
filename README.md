@@ -1,7 +1,7 @@
 # GTEx version 8 rare variant figure generation
-This repository will re-generate all main and supplementary figures in "Diverse transcriptomic signatures across human tissues identify functional rare genetic variation" from a collection of processed input data, which can be found in the processed_input_data directory.
+This repository will re-generate all main and supplementary figures in "Transcriptomic signatures across human tissues identify functional rare genetic variation" from a collection of processed input data, which can be found in the processed_input_data directory.
 
-
+Since the publication of this paper, we found some small mistakes in the code related to the correction of total expression data. Specifically, expression data was corrected for the first 20 genotype PCs rather than the top 3, and genes after chr9 were not corrected for their strongest cis-eQTL. This did not impact any conclusions from our analyses, but for future use, we recommend correcting for the top three genotype PCs and all cis-eQTLs in future work. Updated multi-tissue eOutlier calls are available on the GTEx portal. We thank Taibo Li for helping to identify these inconsistencies.
 ## Dependencies and Testing Envivonment 1
 
 * R 3.5.1
