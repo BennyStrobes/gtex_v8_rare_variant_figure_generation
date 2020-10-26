@@ -1,5 +1,6 @@
 # GTEx version 8 rare variant figure generation
-This repository will re-generate all main and supplementary figures in "Transcriptomic signatures across human tissues identify functional rare genetic variation" from a collection of processed input data, which can be found in the processed_input_data directory.
+=======
+This repository will re-generate all main and supplementary figures in "Transcriptomic signatures across human tissues identify functional rare genetic variation" from a collection of processed input data, which can be found at the following link: https://drive.google.com/open?id=1dCxoYDPjK-E7qTUQhHN5Z-e6hiS5BQCG, with descriptions of each file found in the processed_input_data folder here.
 
 Since the publication of this paper, we found some small mistakes in the code related to the correction of total expression data. Specifically, expression data was corrected for the first 20 genotype PCs rather than the top 3, and genes after chr9 were not corrected for their strongest cis-eQTL. This did not impact any conclusions from our analyses, but for future use, we recommend correcting for the top three genotype PCs and all cis-eQTLs in future work. Updated multi-tissue eOutlier calls are available on the GTEx portal. We thank Taibo Li for helping to identify these inconsistencies.
 ## Dependencies and Testing Envivonment 1
@@ -39,12 +40,63 @@ The following scripts were generated using **Dependencies and Testing Environmen
 
 ## Dependencies and Testing Environment 2
 
+* R 3.6.0
+* R package ggplot2 (3.3.1)
+* R package cowplot (1.0.0)
+* R package dplyr (1.0.0)
+* R package data.table (1.12.8)
+* R package epitools (0.5-10.1)
+* R package ggpubr (0.3.0)
+* R package viridis (0.5.1)
+* R package ggridges (0.5.2)
+
+The following scripts were generated using **Dependencies and Testing Environment 2**:
+* plot_figure1.R
+* plot_figure3.R
+* plot_figure5.R
+* plot_figureS1.R
+* plot_figureS3.R
+* plot_figureS7.R
+* plot_figureS8.R
+* plot_figureS9.R
+* plot_figureS10.R
+* plot_figureS11.R
+* plot_figureS12.R
+* plot_figureS13.R
+* plot_figureS14.R
+* plot_figureS16.R
+* plot_figureS22.R
+* plot_figureS23.R
+* plot_figureS25.R
+* plot_figureS26.R
+* plot_figureS38.R
+* plot_figureS40.R
+* plot_figureS41.R
+* plot_figureS42.R
+
+## Dependencies and Testing Environment 3
+
+* R 4.0.0
+* R package tidyverse (1.3.0)
+* R package magrittr (1.5)
+* R package ggpubr (0.3.0)
+* R pakcage RcolorBrewer (1.1-2)
+* R package ggdendro (0.1-20)
+* R package cowplot (1.0.0)
+
+The following scripts were generated using **Dependencies and Testing Environment 3**:
+* plot_figureS2.R
+* plot_figureS21.R
+* plot_figureS23.R
+* plot_figureS39.R
 
 ## Authors
 
 * **Nicole Ferraro** -- [nmferraro5](https://github.com/nmferraro5) -- nferraro@stanford.edu 
 
 * **Ben Strober** -- [BennyStrobes](https://github.com/BennyStrobes) -- bstrober3@gmail.com
+
+* **Jonah Einson** -- [jeinson](https://github.com/jeinson) -- jeinson@nygenome.org
 
 
 
